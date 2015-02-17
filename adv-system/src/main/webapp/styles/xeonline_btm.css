@@ -1,0 +1,71 @@
+﻿#td_btm
+{
+    padding: 16px 50px 16px 50px;
+    font-size: 12px;
+    text-align: left;
+    color:White;
+    vertical-align: top;
+}
+#td_btm div
+{
+    padding: 0px;
+    vertical-align: top;
+}
+#td_btm span
+{
+    padding: 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+#td_btm .btm_links
+{
+    text-align:center;
+}
+#td_btm .btm_links a
+{
+    color: White;
+    x-text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px
+}
+#td_btm img
+{
+    border-style:none;
+}
+
+
+
+#td_btm_back
+{
+    padding: 10px 50px 10px 50px;
+    font-size: 12px;
+    text-align: left;
+    color:White;
+    vertical-align: top;
+}
+#td_btm_back div
+{
+    padding: 0px;
+    vertical-align: top;
+}
+#td_btm_back span
+{
+    padding: 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+#td_btm_back .btm_links
+{
+    text-align:center;
+}
+#td_btm_back .btm_links a
+{
+    color: White;
+    x-text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px
+}
+#td_btm_back img
+{
+    border-style:none;
+}

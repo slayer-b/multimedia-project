@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.adv.core.model.UserDefaults" table="user_defaults">
+    <id column="id" name="id" type="long">
+      <generator class="foreign">
+        <param name="property">user</param>
+      </generator>
+    </id>
+    <property name="useDefaults" not-null="true" type="boolean">
+      <column default="1" name="use_defaults"/>
+    </property>
+    <component class="com.adv.payment.model.UserAdvCost" name="advCost">
+      <property column="click_cost" name="clickCost" not-null="true" type="double"/>
+      <property column="duration_cost" name="durationCost" not-null="true" type="double"/>
+      <property column="supplantation_cost" name="supplantationCost" not-null="true" type="double"/>
+      <property column="view_cost" name="viewCost" not-null="true" type="double"/>
+      <property column="payment_type" length="60" name="defaultUnit" not-null="true">
+        <type name="org.hibernate.type.EnumType">
+          <param name="enumClass">com.adv.core.model.PaymentAdvUnitsType</param>
+          <param name="type">12</param>
+        </type>
+      </property>
+    </component>
+    <one-to-one constrained="true" class="com.adv.core.model.User" foreign-key="FK_user_user_defaults" name="user"/>
+    <many-to-one cascade="all" class="com.adv.core.model.DefaultsContent" fetch="select" foreign-key="FK_user_defaults_content" name="defaultsContent" not-null="true" unique="true"/>
+  </class>
+</hibernate-mapping>

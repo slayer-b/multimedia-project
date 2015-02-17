@@ -1,0 +1,67 @@
+﻿/* Global Defaults
+=====================================================================*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, table, tr, th, td, embed, object {
+	margin:0;
+	padding:0;
+}
+fieldset, img, abbr {
+	border:0;
+}
+caption, th {
+	text-align:left;
+}
+a,a:link,a:visited,a:hover { 
+	color:#2e577a;
+	text-decoration:none; 
+}
+a img { 
+	border:0; 
+}
+.clear { 
+	clear:both; 
+}
+/* Start CSS Coding
+=====================================================================*/
+#container {
+	/*width:100%;*/
+	margin: 16px;
+	line-height: 1.6em;
+	font:62.5% arial, verdana, serif;
+    padding: 0 14px;
+    /*width: 900px;*/
+	/*width: 960px;*/
+}
+#container > table > table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+#container hr {
+	color:#CCCCCC;
+}
+/*
+more concrete settings
+*/
+#tool_box_area {
+    /*float:right;*/
+    /*position:relative;*/
+    /*right:100px;*/
+}
+#tool_box_area > div {
+    width:350px;
+    height:400px;
+}
+#tool_box_area > div > div {
+    background-image:url('../../img/qr/grid.gif');
+    padding:20px;
+    margin:20px;
+    width:350px;
+}
+#tool_box_area > div > p {
+    margin-left:20px;
+}
+
+#output {
+    margin:20px;
+    width:390px;
+    border:1px solid gray;
+}

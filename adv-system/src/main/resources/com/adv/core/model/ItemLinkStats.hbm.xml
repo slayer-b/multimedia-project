@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class dynamic-insert="true" name="com.adv.core.model.ItemLinkStats" table="item_link_stats">
+    <id column="id" name="id" type="long">
+      <generator class="foreign">
+        <param name="property">item</param>
+      </generator>
+    </id>
+    <component class="com.adv.core.model.Stats" name="stats">
+      <property name="clicks" type="long">
+        <column default="0" name="clicks" not-null="true"/>
+      </property>
+      <property name="views" type="long">
+        <column default="0" name="views" not-null="true"/>
+      </property>
+    </component>
+    <one-to-one constrained="true" class="com.adv.core.model.ItemLink" fetch="select" foreign-key="FK_item_link_stats" name="item"/>
+  </class>
+</hibernate-mapping>

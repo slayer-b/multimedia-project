@@ -1,0 +1,215 @@
+td, span {
+    color: #000;
+    font-family: tahoma, serif;
+    font-size: 9pt
+}
+
+img {
+    border: 0;
+}
+
+body.main_frame {
+    margin: 2px 10px 80px 10px;
+    padding: 0;
+    font-family: tahoma, serif;
+    font-size: 9pt;
+    color: #000;
+}
+
+a {
+    color: #000;
+    font-family: tahoma, serif;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+a.link {
+    text-decoration: none;
+}
+
+a.link:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+a.link:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+a.link:active {
+    text-decoration: none;
+    color: #000;
+}
+
+a.link:link {
+    text-decoration: none;
+    color: #000;
+}
+
+/* messages */
+.error_msg {
+    color: red;
+    font-size: 13px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+}
+
+.help_msg {
+    color: green;
+    font-size: 13px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+}
+
+/* messages */
+
+/* page navigation*/
+table.nav_pages {
+}
+
+td.nav_pages {
+    cursor: pointer;
+}
+
+td.nav_pages_cur {
+    cursor: pointer;
+}
+
+td.nav_pages a {
+    font-size: 11px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bolder;
+    font-family: Verdana, Arial, serif;
+}
+
+td.nav_pages_cur a {
+    font-size: 11px;
+    text-decoration: none;
+    color: #f35d22;
+    font-weight: bolder;
+    font-family: Verdana, Arial, serif;
+}
+
+/* page navigation */
+/* little text for some hints i.e. some buttons or hrefs explanations */
+.hint {
+    font-size: 10px;
+}
+
+/* end */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.long_text_area {
+    width: 700px;
+}
+
+.head {
+    color: #CCC;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.head_top {
+    color: #CCC;
+    font-size: 24pt;
+    text-decoration: none;
+}
+
+.menu {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.no_border {
+    border-width: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.sort_edit {
+    width: 50px;
+}
+
+.form_head {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form_head_row {
+    color: #333;
+    font-size: 16px;
+}
+
+.form_row_0 {
+    background-color: #E0E0E0;
+}
+
+.form_row_1 {
+    background-color: #FFFFFF;
+}
+
+table.form_row {
+    margin: 2px 0 2px 0;
+}
+
+div.form_row {
+    margin: 2px 10px 2px 10px;
+}
+
+div.left {
+    text-align: left;
+}
+
+div.right {
+    text-align: right;
+}
+
+div.form_frame {
+    width: 800px;
+}
+
+.right_border {
+    border-right: 1px solid black;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.cur_nav {
+    color: black;
+    text-decoration: none;
+    border: black solid 1px;
+    padding: 1px;
+    height: 100%;
+}
+
+.vis_nav {
+    color: black;
+    text-decoration: none;
+    padding: 2px;
+}
+
+.invis_nav {
+    display: none;
+}
+
+div.user_auth {
+    padding-bottom: 5px;
+}
+
+a.locale {
+    text-decoration: none;
+    margin-right: 5px;
+    color: black;
+}

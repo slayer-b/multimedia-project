@@ -1,0 +1,63 @@
+<configuration>
+
+    <contextName>multimedia-portal</contextName>
+
+    <logger name="org.hibernate" level="ERROR"/>
+    <logger name="org.hibernate.tool.hbm2ddl" level="ERROR"/>
+    <logger name="gallery" level="INFO"/>
+    <logger name="com.multimedia" level="DEBUG"/>
+    <logger name="gallery.web.support.wallpaper" level="INFO"/>
+    <!--<logger name="org.apache.http" level="ALL"/>-->
+    <!--<logger name="org.springframework.security" level="DEBUG"/>-->
+
+    <if condition='property("os.name").contains("Mac OS X")'>
+        <then>
+			<appender name="appenderAll" class="ch.qos.logback.core.ConsoleAppender">
+			    <encoder>
+			        <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			    </encoder>
+			</appender>
+        </then>
+        <else>
+		    <appender name="appenderAll" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                    <level>ERROR</level>
+                    <onMatch>DENY</onMatch>
+                    <onMismatch>ACCEPT</onMismatch>
+                </filter>
+		        <file>${catalina.base}/logs/multimedia-portal/debug.log</file>
+		        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		            <!-- daily rollover -->
+		            <fileNamePattern>${catalina.base}/logs/multimedia-portal/debug.%d{yyyy-MM-dd}.log</fileNamePattern>
+		            <!-- keep 30 days' worth of history -->
+		            <maxHistory>7</maxHistory>
+		        </rollingPolicy>
+		        <encoder>
+		            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		        </encoder>
+		    </appender>
+            <appender name="appenderError" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <filter class="ch.qos.logback.classic.filter.LevelFilter">
+			        <level>ERROR</level>
+			        <onMatch>ACCEPT</onMatch>
+			        <onMismatch>DENY</onMismatch>
+			    </filter>
+                <file>${catalina.base}/logs/multimedia-portal/error.log</file>
+                <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                    <!-- daily rollover -->
+                    <fileNamePattern>${catalina.base}/logs/multimedia-portal/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+                    <!-- keep 30 days' worth of history -->
+                    <maxHistory>7</maxHistory>
+                </rollingPolicy>
+                <encoder>
+                    <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+                </encoder>
+            </appender>
+        </else>
+    </if>
+
+	<root level="INFO">
+       <appender-ref ref="appenderError" />
+	   <appender-ref ref="appenderAll" />
+	</root>
+</configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class abstract="true" name="com.adv.core.model.ItemAdv" table="item_adv">
+    <id column="item_id" name="id" type="long">
+      <generator class="native"/>
+    </id>
+    <discriminator column="item_type" length="60" type="string"/>
+    <property column="payment_method" insert="true" name="paymentMethod" not-null="false" update="true">
+      <type name="org.hibernate.type.EnumType">
+        <param name="enumClass">com.adv.core.types.PaymentMethod</param>
+        <param name="type">12</param>
+      </type>
+    </property>
+    <property column="date_paid" name="date_paid" not-null="false" type="timestamp"/>
+    <property column="paid" name="paid" not-null="true" type="boolean"/>
+    <one-to-one constrained="true" entity-name="com.adv.order.model.OrderUnits" fetch="select" foreign-key="item_link_order" name="order"/>
+  </class>
+</hibernate-mapping>

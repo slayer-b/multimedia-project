@@ -1,0 +1,31 @@
+/*
+	Simple OpenID Plugin
+	http://code.google.com/p/openid-selector/
+	
+	This code is licensed under the New BSD License.
+*/
+
+body {
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+img {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+#openid_form {
+	width: 580px;
+}
+
+#openid_form legend {
+	font-weight: bold;
+}
+
+#openid-providers > img {
+    padding: 3px;
+}
+
+#openid-providers > img:hover {
+    padding: 3px;
+    background-color: #FFFCC9;
+}

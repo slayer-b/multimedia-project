@@ -1,0 +1,38 @@
+<%@page pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--jsp:useBean id="count" scope="page" type="common.beans.PagerBean"/--%>
+<c:if test="${count.itemsCount gt 0}">
+<table cellpadding="2" cellspacing="5"><tr>
+
+<%-- from 0 to nav buttons count--%>
+<td title="на первую страницу" align="center"><a href="index.htm?${count.curPageParam}=${count.firstPage}${count.queryString}${page_params}"><img alt="на первую страницу" src="${pageContext.servletContext.contextPath}/img/content_first.gif"></a></td>
+<td title="на предыдущую страницу (для быстрого перехода можно нажать кнопку ВЛЕВО на клавиатуре)" align="center"><a href="index.htm?${count.curPageParam}=${count.prevPage}${count.queryString}${page_params}"><img alt="на предыдущую страницу" src="${pageContext.servletContext.contextPath}/img/content_prev.gif"></a></td>
+<%-- from first to current-1 --%>
+<c:forEach items="${wallpapers}" var="item" varStatus="i">
+<c:choose>
+<c:when test="${item.id eq count.currentPage}">
+<td class="wall_det_pag_cur" onclick="window.location='index.htm?${count.curPageParam}=${item.id}${count.queryString}${page_params}'"><a href="index.htm?${count.curPageParam}=${item.id}${count.queryString}${page_params}">
+<img class="wall_det_pag_cur" alt="${item.title}" src="${pageContext.servletContext.contextPath}/images/wallpaper/tiny/${item.folderAndName}" title="${item.description}"></a></td>
+</c:when>
+<c:when test="${item ne null}">
+<td class="wall_det_pag">
+<div class="wall_det_pag" onclick="window.location='index.htm?${count.curPageParam}=${item.id}${count.queryString}${page_params}'"><a href="index.htm?${count.curPageParam}=${item.id}${count.queryString}${page_params}">
+<img alt="${item.title}" src="${pageContext.servletContext.contextPath}/images/wallpaper/tiny/${item.folderAndName}" title="${item.description}"></a></div>
+</td>
+</c:when>
+<c:otherwise>
+<td width="53px"/>
+</c:otherwise>
+</c:choose>
+</c:forEach>
+
+<%--function for viewing next page--%>
+<script type="text/javascript">
+function next_pic(){window.open(decodeURIComponent("index.htm?${count.curPageParam}=${count.nextPage}"+"${count.queryString}".replace(/&amp;/gi, "&")+"${page_params}"),"_parent");}
+function prev_pic(){window.open(decodeURIComponent("index.htm?${count.curPageParam}=${count.prevPage}"+"${count.queryString}".replace(/&amp;/gi, "&")+"${page_params}"),"_parent");}
+</script>
+<td title="на следующую страницу (для быстрого перехода можно нажать кнопку ВПРАВО на клавиатуре)" align="center"><a href="index.htm?${count.curPageParam}=${count.nextPage}${count.queryString}${page_params}"><img alt="на следующую страницу" src="${pageContext.servletContext.contextPath}/img/content_next.gif"></a></td>
+<td title="на последнюю страницу" align="center"><a href="index.htm?${count.curPageParam}=${count.lastPage}${count.queryString}${page_params}"><img alt="на последнюю страницу" src="${pageContext.servletContext.contextPath}/img/content_last.gif"></a></td>
+
+</tr></table>
+</c:if>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <subclass discriminator-value="ADVERTISEMENT" extends="com.adv.core.model.DefaultsContent" name="com.adv.core.model.DefaultsConAdv">
+    <join fetch="select" table="defaults_con_adv">
+      <key column="id"/>
+      <component class="com.adv.core.model.ConAdvProps" name="properties">
+        <property name="advQuantity" type="integer">
+          <column default="1" name="adv_quantity" not-null="true"/>
+        </property>
+        <property name="maxPages" type="integer">
+          <column default="1" name="max_pages" not-null="true"/>
+        </property>
+        <property name="navVisible" type="boolean">
+          <column default="1" name="nav_visible" not-null="true"/>
+        </property>
+      </component>
+    </join>
+  </subclass>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <subclass abstract="true" discriminator-value="ADVERTISEMENT" dynamic-insert="true" extends="com.adv.core.model.BlockContent" name="com.adv.core.model.ContentAdv">
+    <join fetch="select" table="content_adv">
+      <key column="location_id"/>
+      <component class="com.adv.core.model.ConAdvProps" name="properties">
+        <property name="advQuantity" type="integer">
+          <column default="1" name="adv_quantity" not-null="true"/>
+        </property>
+        <property name="maxPages" type="integer">
+          <column default="1" name="max_pages" not-null="true"/>
+        </property>
+        <property name="navVisible" type="boolean">
+          <column default="1" name="nav_visible" not-null="true"/>
+        </property>
+      </component>
+      <many-to-one cascade="all" class="com.adv.payment.model.AdvPaymentUnits" foreign-key="FK_adv_content_payment_units" name="paymentUnits" not-null="true" unique="true" update="false"/>
+    </join>
+  </subclass>
+</hibernate-mapping>

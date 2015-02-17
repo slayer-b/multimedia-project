@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.adv.core.model.BlockLocation" proxy="com.adv.model.abs.IBlockLocation" table="block_location">
+    <id column="location_id" name="id" type="long">
+      <generator class="native"/>
+    </id>
+    <discriminator column="location_type" length="60" type="string"/>
+    <property column="location_type" insert="false" name="location_type" update="false">
+      <type name="org.hibernate.type.EnumType">
+        <param name="enumClass">com.adv.core.types.LocationType</param>
+        <param name="type">12</param>
+      </type>
+    </property>
+    <many-to-one cascade="none" entity-name="Block" foreign-key="FK_block_location" name="block" update="false">
+      <column name="id_block" not-null="true"/>
+    </many-to-one>
+    <!--many-to-one entity-name="BlockContent" foreign-key="FK_location_content" name="blockContent"
+		 fetch="select" not-null="true" unique="true" cascade="all" /-->
+    <one-to-one cascade="all" class="com.adv.core.model.BlockContent" fetch="select" foreign-key="FK_location_content" name="blockContent"/>
+  </class>
+</hibernate-mapping>

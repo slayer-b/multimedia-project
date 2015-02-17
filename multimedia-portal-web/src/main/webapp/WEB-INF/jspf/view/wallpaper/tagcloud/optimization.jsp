@@ -1,0 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<title>${content_data.tag}, ${wallpaper_opt_phrase}<c:if test="${WallpaperResolutionFilter.current ne null}"> - ${WallpaperResolutionFilter.current.width} x ${WallpaperResolutionFilter.current.height}</c:if>. Мультимедийный портал download-multimedia.com</title>
+<meta name="keywords" content="${content_data.tag}, ${wallpaper_opt_phrase}<c:if test="${WallpaperResolutionFilter.current ne null}">, ${WallpaperResolutionFilter.current.width} x ${WallpaperResolutionFilter.current.height}</c:if>.">
+<meta name="description" content="${content_data.tag}, ${wallpaper_opt_phrase}<c:if test="${WallpaperResolutionFilter.current ne null}">. Разрешение - ${WallpaperResolutionFilter.current.width} x ${WallpaperResolutionFilter.current.height}</c:if>. Скачать самые лучшие обои на рабочий стол тематики ${content_data.tag} могут все посетители мультимедийного портала download-multimedia.com без регистрации и абсолютно бесплатно. Раздел портала: ${content_data.tag}${' '}${wallpaper_opt_phrase}.">

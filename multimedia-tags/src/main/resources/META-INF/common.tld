@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <description>common tags</description>
+    <tlib-version>3.0</tlib-version>
+    <short-name>utils</short-name>
+    <uri>http://download-multimedia.com/tags/utils</uri>
+
+    <tag>
+        <description>Replace parameter value with a new one.
+            If no parameter found append it to the end of url.
+        </description>
+        <name>replaceParam</name>
+        <tag-class>com.multimedia.tags.common.ReplaceParameterTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>Name of a request scope variable. Url or any string where to replace parameter.</description>
+            <name>url</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>Name of parameter whitch value to replace.</description>
+            <name>parameterName</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>Url or any string where to replace parameter.</description>
+            <name>parameterNewValue</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>Deletes given parameter from url(only first occurance).
+        </description>
+        <name>removeParam</name>
+        <tag-class>com.multimedia.tags.common.RemoveParameterTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>Name of a request scope variable. Url or any string where to replace parameter.</description>
+            <name>url</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>Name of parameter to remove.</description>
+            <name>parameterName</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Replace 'target' strings by 'replacement' string in given string.
+        </description>
+        <name>replaceInString</name>
+        <tag-class>com.multimedia.tags.common.ReplaceInStringTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>String where to replace.</description>
+            <name>string</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>String that will be replaced.</description>
+            <name>target</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>New replacement for that string.</description>
+            <name>replacement</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+
+</taglib>

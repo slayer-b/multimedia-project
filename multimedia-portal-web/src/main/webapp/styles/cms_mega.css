@@ -1,0 +1,8 @@
+a{text-decoration:none;color:black;padding:1px;}
+
+a.OF_empty{background-color:red;color:white;}
+a.add_wallpaper_empty{background-color:blue;color:white;}
+a.optimize_wallpaper{background-color:green;color:white;}
+.inactive{color:red;}
+
+.border{border:1px solid #e8e8e8;}

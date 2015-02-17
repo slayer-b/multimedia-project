@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.adv.core.model.Block" table="block">
+    <id column="block_id" name="id" type="long">
+      <generator class="native"/>
+    </id>
+    <property name="id_user" type="long">
+      <column name="id_user" not-null="true"/>
+    </property>
+    <many-to-one class="com.adv.core.model.User" foreign-key="FK_user_block" insert="false" name="user" update="false">
+      <column name="id_user"/>
+    </many-to-one>
+    <property index="block_pub_id" name="pub_id" not-null="true" type="string" unique="true" update="false">
+      <column length="255" name="pub_id"/>
+    </property>
+    <property column="name" length="255" name="name" type="string"/>
+    <component class="com.adv.payment.model.BlockAdvCost" name="advCost">
+      <property column="click_cost" name="clickCost" not-null="true" type="double"/>
+      <property column="duration_cost" name="durationCost" not-null="true" type="double"/>
+      <property column="supplantation_cost" name="supplantationCost" not-null="true" type="double"/>
+      <property column="view_cost" name="viewCost" not-null="true" type="double"/>
+      <property column="payment_type" length="60" name="defaultUnit" not-null="true">
+        <type name="org.hibernate.type.EnumType">
+          <param name="enumClass">com.adv.core.types.PaymentAdvUnitsType</param>
+          <param name="type">12</param>
+        </type>
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>

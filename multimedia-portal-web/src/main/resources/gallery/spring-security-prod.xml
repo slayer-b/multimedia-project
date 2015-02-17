@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:http pattern="/login.jsp" security="none"/>
+    <security:http pattern="/styles/**" security="none"/>
+    <security:http pattern="/scripts/**" security="none"/>
+    <security:http pattern="/img/**" security="none"/>
+    <security:http pattern="/favicon.*" security="none"/>
+    <security:http pattern="/robots.txt" security="none"/>
+    <security:http pattern="/rss.xml" security="none"/>
+    <security:http pattern="/sitemap*.xml" security="none"/>
+    <security:http pattern="/images/rubric/**" security="none"/>
+    <security:http pattern="/images/wallpaper/tiny/**" security="none"/>
+    <security:http pattern="/images/wallpaper/smaller/**" security="none"/>
+    <security:http pattern="/images/wallpaper/small/**" security="none"/>
+    <security:http pattern="/images/wallpaper/medium/**" security="none"/>
+    <security:http pattern="/p/**" security="none"/>
+
+    <security:http use-expressions="true">
+        <security:intercept-url pattern="/cms/**" access="hasRole('admin')"/>
+        <!-- Next line means that user must be authenticated -->
+        <!-- to make it work anonymous access must be turned on -->
+        <!--<security:intercept-url pattern="/**" access="permitAll"/>-->
+        <security:anonymous enabled="false"/>
+        <security:logout logout-success-url="/index.htm" logout-url="/logout" invalidate-session="true"/>
+        <security:openid-login  authentication-failure-url="/login.jsp?login_error=true"
+                                login-page="/login.jsp"
+                                user-service-ref="userService">
+            <security:attribute-exchange identifier-match="https://www.google.com/.*">
+                <security:openid-attribute name="email" type="http://axschema.org/contact/email" required="true" count="1"/>
+            </security:attribute-exchange>
+            <!-- I failed to get smth from vkontakte using attribute-exchange -->
+            <!--<security:attribute-exchange identifier-match="http://vkontakteid.ru/.*">-->
+                <!--<security:openid-attribute name="nickname" type="http://axschema.org/namePerson/friendly"/>-->
+                <!--<security:openid-attribute name="fullname" type="http://axschema.org/namePerson"/>-->
+                <!--<security:openid-attribute name="email" type="http://axschema.org/contact/email"/>-->
+            <!--</security:attribute-exchange>-->
+        </security:openid-login>
+        <!--<security:remember-me token-repository-ref="tokenRepo"/>-->
+    </security:http>
+
+    <bean id="tokenRepo"
+            class="org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl" />
+
+    <security:authentication-manager alias="authenticationManager"/>
+</beans>

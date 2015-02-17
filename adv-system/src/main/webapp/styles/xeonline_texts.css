@@ -1,0 +1,222 @@
+﻿#td_body table .empty-left
+{
+    width: 54px;
+}
+#td_body table #text1 li
+{
+      x-padding-top:30px;
+      padding-bottom:20px;
+}
+#td_body table #text1
+{
+    width: 606px;
+    text-align: left;
+    font-size: 10pt;
+}
+#td_body table #text2
+{
+    width: 606px;
+    text-align:left;
+}
+#td_body table #text2 #services
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color:Gray;
+    x-font-weight: bold;
+}
+#td_body table .empty-middle
+{
+    width: 52px;
+}
+#td_body table #score
+{
+    width: 282px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+}
+#td_body table #score .score-header
+{
+    background-image: url('../imgs/score-head.png');
+    background-repeat: no-repeat;
+    width: 282px;
+    height: 8px;
+}
+#td_body table #score .score-btm
+{
+    background-image: url('../imgs/score-btm.png');
+    background-repeat: no-repeat;
+    width: 282px;
+    height: 18px;
+}
+#td_body table #score .score-left
+{
+    background-image: url('../imgs/score-left.png');
+    background-repeat: repeat-y;
+    width: 12px;
+}
+#td_body table #score .score-right
+{
+    background-image: url('../imgs/score-right.png');
+    background-repeat: repeat-y;
+    width: 12px;
+}
+#td_body table #score .score-separator-white
+{
+    background-color: White;
+    height: 1px;
+}
+#td_body table #score .score-separator-grey
+{
+    background-color:#D7D7D7;
+    height: 1px;
+}
+#td_body table #score .score-text
+{
+    padding: 3px;
+    background-color: #EBEBEB;
+    text-align: left;
+}
+#td_body table #score .header
+{
+    font-size: 24px;
+    color: Gray;
+    padding-bottom:14px;
+}
+#td_body table #score #more
+{
+    text-align: right;
+    font-size: 11pt;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+#td_body table #score #more a
+{
+    color:Black;
+}
+#td_body table #score .stxtcol1
+{
+    width: 138px;
+}
+#td_body table #score .stxtcol2
+{
+    width: 40px;
+}
+#td_body table #score .stxtcol3
+{
+    width: 40px;
+}
+#td_body table #score .stxtcol4
+{
+    width: 40px;
+}
+#td_body table .empty-right
+{
+    width: 30px
+}
+
+#td_body table #text2 .txt_block2
+{
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 12px;
+}
+#td_body table #text2 .pic
+{
+    width: 153px;
+    height: 106px;
+}
+#td_body table #text2 .text
+{
+    width: 463px;
+    height: 106px;
+    padding-left: 17px;
+}
+#td_body table #text2 .text_header
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-bottom: 15px;
+    color:Gray;
+}
+#td_body table #text2 .block2-text-separator
+{
+    background-color: #ECEDED;
+    height: 1px;
+} 
+
+
+
+#td_body table #news
+{
+    width: 282px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+}
+#td_body table #news .news-header
+{
+    background-image: url('../imgs/news-head.png');
+    background-repeat: no-repeat;
+    width: 282px;
+    height: 8px;
+}
+#td_body table #news .news-text
+{
+    background-color: #FBFBFB;
+    text-align: left;
+    padding-top: 14px;
+}
+#td_body table #news .news-text span
+{
+    font-size: 14px;
+    color: Gray;
+}
+#td_body table #news .news-text div
+{
+    padding-top: 5px;
+    padding-bottom:5px;
+}
+#td_body table #news .header
+{
+    padding-top: 3px;
+    padding-bottom:0px;
+    font-size: 24px;
+    color: Gray;
+}
+#td_body table #news .news-left
+{
+    background-image: url('../imgs/news-left.png');
+    background-repeat: repeat-y;
+    width: 12px;
+}
+#td_body table #news .news-right
+{
+    background-image: url('../imgs/news-right.png');
+    background-repeat: repeat-y;
+    width: 12px;
+}
+#td_body table #news .news-separator
+{
+    background-color:#D7D7D7;
+    height: 1px;
+}
+#td_body table #news .news-btm
+{
+    background-image: url('../imgs/news-btm.png');
+    background-repeat: no-repeat;
+    width: 282px;
+    height: 18px;
+}
+#td_body table #news #more_news
+{
+    text-align:right;
+    font-size: 11pt;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+#td_body table #news #more_news a
+{
+    color:Black;
+}

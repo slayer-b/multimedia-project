@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <subclass discriminator-value="LINK"  extends="com.adv.core.model.DefaultsConAdv" name="com.adv.core.model.DefaultsConLink">
+    <join fetch="select" table="defaults_con_link">
+      <key column="id"/>
+      <property column="css" length="5120" name="css" type="string"/>
+    </join>
+  </subclass>
+</hibernate-mapping>

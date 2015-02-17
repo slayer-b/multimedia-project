@@ -1,0 +1,32 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://download-multimedia.com/tags/cache" prefix="cache"%>
+<c:if test="${WallpaperResolutionFilter ne null}"><c:set var="other">class="cur"</c:set>
+<noindex><h2>Разрешения</h2>
+<div class="wall_resolutions" align="center"><c:forEach items="${WallpaperResolutionFilter.data}" var="item">
+<a rel="nofollow"<c:if test="${item.id eq sessionScope['WallpaperResolution']}"> class="cur"<c:remove var="other"/></c:if> href="index.htm?id_pages_nav=${page.id}&amp;id_resolution_nav=${item.id}${general_wallpaper_tagcloud_submodule.queryParam}">${item.width}x${item.height}</a>
+</c:forEach><a rel="nofollow" ${other} href="index.htm?id_pages_nav=${page.id}&amp;id_resolution_nav=0${general_wallpaper_tagcloud_submodule.queryParam}">Не выбрано</a></div></noindex></c:if>
+
+<c:if test="${not empty advertisement['right_top']}">
+<div align="center" class="adv_right_top">${advertisement['right_top']}</div>
+</c:if>
+
+<c:if test="${general_wallpaper_tagcloud_submodule ne null}">
+<center class="right_head"><a href="index.htm?id_pages_nav=${general_wallpaper_tagcloud_submodule.page.id}">${general_wallpaper_tagcloud_submodule.page.name}</a></center>
+<noindex><div class="tag_cloud" align="center"><c:forEach items="${general_wallpaper_tagcloud_submodule.data}" var="item">
+<a rel="nofollow"<c:if test="${item.name eq param['tag']}"> class="cur"</c:if> href="index.htm?id_pages_nav=${general_wallpaper_tagcloud_submodule.page.id}&amp;tag=${item.name}" style="font-size: ${item.weightInt}px;">${item.name}</a>
+</c:forEach></div></noindex></c:if>
+
+<c:if test="${system_send_email_page ne null}"><center class="right_head"><a href="index.htm?id_pages_nav=${system_send_email_page.id}">${system_send_email_page.name}</a></center></c:if>
+
+<c:if test="${not empty advertisement['right_bottom']}">
+<div align="center" class="adv_right_bottom">${advertisement['right_bottom']}</div>
+</c:if>
+
+<c:if test="${general_wallpaper_random_submodule ne null}">
+<center class="right_head"><a href="index.htm?id_pages_nav=${general_wallpaper_random_submodule.page.id}">${general_wallpaper_random_submodule.page.name}</a></center>
+<%--cache:cacheXTimes key="random_wallpapers" quantity="15" generationText="${general_wallpaper_random_submodule.page.name} генерируется"><noindex><div align="center" class="wallpaper_random">
+<c:forEach items="${general_wallpaper_random_submodule.data}" var="item">
+<a rel="nofollow" href="index.htm?id_pages_nav=${item.id_pages}&amp;id_photo_nav=${item.id}"><img alt="${item.title}" title="${item.title}" src="${pageContext.servletContext.contextPath}/images/wallpaper/smaller/${item.folderAndName}"></a>
+</c:forEach></div></noindex></cache:cacheXTimes--%>
+</c:if>

@@ -1,0 +1,79 @@
+﻿#auth
+{
+    position: relative;
+    top:8px;
+    left: 522px;
+    vertical-align: top;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+#authb
+{
+    position: relative;
+    top:-11px;
+    left: 522px;
+    vertical-align: top;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+.auth_left
+{
+    background-image: url('../imgs/auth-left.png');
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 36px;
+}
+.auth_item
+{
+    padding: 7px 2px 7px 2px;
+    background-image: url('../imgs/auth-main.png');
+    background-repeat: repeat-x;
+    height: 36px;
+    text-align: left;
+}
+.auth_item a
+{
+    color: White;
+    font-size: 8pt;
+    font-family: Arial, Helvetica, sans-serif;
+    position:relative;
+    top:3px;
+}
+.auth_item input[type=text]
+{
+    color: #808080;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    width: 177px;
+    height: 12px;
+}
+.auth_right
+{
+    background-image: url('../imgs/auth-right.png');
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 36px;
+}
+.authb_item
+{
+    padding: 7px 11px 7px 11px;
+    background-image: url('../imgs/auth-main.png');
+    background-repeat: repeat-x;
+    height: 36px;
+    text-align: left;
+}
+.authb_item a
+{
+    color: White;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    position:relative;
+    top:7px;
+}
+.authb_item input[type=image]
+{
+    position:relative;
+    top:6px;
+}

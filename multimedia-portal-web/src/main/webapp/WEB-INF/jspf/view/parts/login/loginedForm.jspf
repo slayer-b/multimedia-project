@@ -1,0 +1,14 @@
+<%@page pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<table cellspacing="2px" cellpadding="1px">
+
+<tr><td><font class="auth">Здравствуйте, <sec:authentication property="principal.name"/></font></td></tr>
+
+<tr><td><a class="auth" href="index.htm?id_pages_nav=${system_user_page.id}">Мои личные данные</a></td></tr>
+<c:if test="${system_wallpaper_list_page ne null}">
+<tr><td><a class="auth" href="index.htm?id_pages_nav=${system_wallpaper_list_page.id}">${system_wallpaper_list_page.name}</a></td></tr>
+</c:if>
+<tr><td><a class="auth" href="<c:url value='/logout'/>">Выход</a></td></tr>
+
+</table>

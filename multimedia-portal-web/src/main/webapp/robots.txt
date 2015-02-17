@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://download-multimedia.com/sitemaps_0.xml

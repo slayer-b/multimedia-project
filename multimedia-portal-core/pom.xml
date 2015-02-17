@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>multimedia-portal-core</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>multimedia-portal-core</name>
+
+	<parent>
+		<artifactId>multimedia-parent</artifactId>
+	    <groupId>com.multimedia</groupId>
+	    <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../multimedia-parent</relativePath>
+	</parent>
+
+	<dependencies>
+		<!-- opencloud -->
+		<dependency>
+		    <groupId>org.mcavallo</groupId>
+		    <artifactId>opencloud</artifactId>
+		    <version>0.0.1</version>
+		</dependency>
+		<!-- email -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.4</version>
+		</dependency>
+        <!-- my dependent projects -->
+        <dependency>
+            <groupId>com.multimedia</groupId>
+            <artifactId>multimedia-tags</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+		<dependency>
+            <groupId>com.multimedia</groupId>
+            <artifactId>multimedia-commons</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- for login -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-openid</artifactId>
+        </dependency>
+        <!-- ExternalServlet -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.2.1</version>
+        </dependency>
+    </dependencies>
+</project>

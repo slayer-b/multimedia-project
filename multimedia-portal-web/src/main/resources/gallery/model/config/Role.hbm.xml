@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.multimedia.security.model.Role" table="roles">
+    <id name="id" type="java.lang.Long">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.multimedia.security.model.User" fetch="select" foreign-key="user_roles" name="user">
+      <column name="id_users" not-null="true"/>
+    </many-to-one>
+    <property name="role" type="string">
+      <column length="45" name="role" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../multimedia-commons/multimedia-commons.iml" filepath="$PROJECT_DIR$/../multimedia-commons/multimedia-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../multimedia-parent/multimedia-parent.iml" filepath="$PROJECT_DIR$/../multimedia-parent/multimedia-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../multimedia-portal-core/multimedia-portal-core.iml" filepath="$PROJECT_DIR$/../multimedia-portal-core/multimedia-portal-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../multimedia-portal-web/multimedia-portal-web.iml" filepath="$PROJECT_DIR$/../multimedia-portal-web/multimedia-portal-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multimedia-project.iml" filepath="$PROJECT_DIR$/multimedia-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../multimedia-tags/multimedia-tags.iml" filepath="$PROJECT_DIR$/../multimedia-tags/multimedia-tags.iml" />
+    </modules>
+  </component>
+</project>
+

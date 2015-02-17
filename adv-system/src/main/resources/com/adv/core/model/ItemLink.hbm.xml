@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <subclass discriminator-value="LINK" extends="com.adv.core.model.ItemAdv" name="com.adv.core.model.ItemLink">
+    <one-to-one constrained="false" entity-name="ItemLinkStats" fetch="select" foreign-key="FK_item_link_stats" name="stats"/>
+    <join fetch="select" table="item_link">
+      <key column="item_id"/>
+      <property column="id_location" name="id_location" not-null="true" type="long"/>
+      <many-to-one class="com.adv.core.model.ContentLink" foreign-key="FK_content_link_item_link" insert="false" name="ContentLink" update="false">
+        <column name="id_location"/>
+      </many-to-one>
+      <property column="sort" name="sort" not-null="true" type="long"/>
+      <property column="text" length="5120" name="text" not-null="true" type="string"/>
+      <property column="url" length="5120" name="url" not-null="true" type="string"/>
+      <property column="title" length="5120" name="title" not-null="true" type="string"/>
+      <property column="email" length="5120" name="email" not-null="true" type="string"/>
+    </join>
+  </subclass>
+  <!--query name="itemLinkWithClick"-->
+  <!--![CDATA[-->
+  <!--from ItemLink where id_location=:id_location and paid=true and stats.stats.clicks < order.quantity order by date_paid desc
+]]>
+</query-->
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="">
+    <!-- JDBC -->
+    <ResourceLink global="jdbc.connection.driver_class"
+                name="jdbc.connection.driver_class" type="java.lang.String"/>
+    <ResourceLink global="jdbc.connection.url"
+                name="jdbc.connection.url" type="java.lang.String"/>
+    <ResourceLink global="jdbc.connection.username"
+                name="jdbc.connection.username" type="java.lang.String"/>
+    <ResourceLink global="jdbc.connection.password"
+                name="jdbc.connection.password" type="java.lang.String"/>
+    <!-- wallpaper storage directory -->
+    <ResourceLink global="wallpaper.base.dir"
+                name="wallpaper.base.dir" type="java.lang.String"/>
+    <!-- Email -->
+    <ResourceLink global="email.host"
+                  name="email.host" type="java.lang.String"/>
+    <ResourceLink global="email.login"
+                  name="email.login" type="java.lang.String"/>
+    <ResourceLink global="email.password"
+                  name="email.password" type="java.lang.String"/>
+</Context>

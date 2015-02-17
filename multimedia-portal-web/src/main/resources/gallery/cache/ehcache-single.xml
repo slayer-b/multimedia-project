@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+        updateCheck="false"
+        name="ehcache-single">
+
+    <diskStore path="java.io.tmpdir/gallery/cache"/>
+
+    <defaultCache
+            maxElementsInMemory="100"
+            eternal="false"
+            timeToIdleSeconds="86400"
+            timeToLiveSeconds="86400"
+            overflowToDisk="true"
+            maxElementsOnDisk="1000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            />
+
+    <!-- Page and Page Fragment Caches -->
+
+    <cache name="pages_select_combobox"
+           maxElementsInMemory="25"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           overflowToDisk="true">
+    </cache>
+
+    <cache name="tag_cloud"
+           maxElementsInMemory="10"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           overflowToDisk="true">
+    </cache>
+
+    <cache name="wallpaper_resolutions"
+           maxElementsInMemory="2"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           overflowToDisk="true">
+    </cache>
+
+    <cache name="random_wallpapers"
+           maxElementsInMemory="20"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="3600"
+           overflowToDisk="true">
+    </cache>
+
+    <cache name="html_localization"
+           maxElementsInMemory="3"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           overflowToDisk="true">
+    </cache>
+
+    <cache name="ajax_rubrication"
+           maxElementsInMemory="500"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           overflowToDisk="true">
+    </cache>
+
+    <cache name="advertisement"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           diskPersistent="true"
+           overflowToDisk="true">
+    </cache>
+
+    <cache name="advertisement_pages"
+           maxElementsInMemory="10"
+           eternal="false"
+           timeToIdleSeconds="86400"
+           timeToLiveSeconds="86400"
+           diskPersistent="true"
+           overflowToDisk="true">
+    </cache>
+
+</ehcache>

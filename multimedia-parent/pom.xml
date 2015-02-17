@@ -1,0 +1,360 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.multimedia</groupId>
+	<artifactId>multimedia-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>multimedia-parent</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version>1.6</java-version>
+
+        <scala-version>2.10.0-RC3</scala-version>
+		<org.springframework-version>3.2.13.RELEASE</org.springframework-version>
+		<org.spring.security-version>3.1.3.RELEASE</org.spring.security-version>
+		<org.hibernate-version>4.1.7.Final</org.hibernate-version>
+		<org.ehcache-version>2.6.0</org.ehcache-version>
+        <jackson-2-version>2.1.1</jackson-2-version>
+
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<logback-version>1.0.6</logback-version>
+	</properties>
+
+    <repositories>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>https://oss.sonatype.org/content/groups/scala-tools/</url>
+        </repository>
+        <repository>
+            <id>repository.springsource.milestone</id>
+            <name>SpringSource Milestone Repository</name>
+            <url>http://repo.springsource.org/milestone</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>https://oss.sonatype.org/content/groups/scala-tools/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+	<dependencies>
+		<!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${org.springframework-version}</version>
+            <exclusions>
+                <!-- Exclude Commons Logging in favor of SLF4j -->
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+        <!-- spring security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${org.spring.security-version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jdbc</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-tx</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- spring + hibernate -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.2.0.RELEASE</version>
+        </dependency>
+
+		<!-- hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<type>jar</type>
+			<version>${org.hibernate-version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${org.hibernate-version}</version>
+        </dependency>
+
+		<!-- hibernate validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.2.0.Final</version>
+			<type>jar</type>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback-version}</version>
+		</dependency>
+		<!-- to evaluate 'if' expressions in logback -->
+		<dependency>
+			<groupId>janino</groupId>
+			<artifactId>janino</artifactId>
+			<version>2.5.10</version>
+		</dependency>
+		<!-- ehcache -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+			<version>${org.ehcache-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-web</artifactId>
+			<version>2.0.3</version>
+		</dependency>
+		<!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+            <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jsp-api</artifactId>
+			<version>7.0.25</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Jackson JSON Mapper -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-2-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.3</version>
+        </dependency>
+
+        <!-- scala -->
+        <!--<dependency>-->
+            <!--<groupId>org.scala-lang</groupId>-->
+            <!--<artifactId>scala-library</artifactId>-->
+            <!--<version>${scala-version}</version>-->
+        <!--</dependency>-->
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${org.spring.security-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-aop</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-beans</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- vkontakte sends SReg instead of AX, so we are using another library -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-openid</artifactId>
+                <version>${org.spring.security-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-aop</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-beans</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-web</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${org.spring.security-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-aop</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-beans</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-expression</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-web</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!--<plugin>-->
+                <!--<groupId>org.scala-tools</groupId>-->
+                <!--<artifactId>maven-scala-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>scala-compile-first</id>-->
+                        <!--<phase>process-resources</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>add-source</goal>-->
+                            <!--<goal>compile</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>scala-test-compile</id>-->
+                        <!--<phase>process-test-resources</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>testCompile</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+	<profiles>
+		<!-- sonar profile -->
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+
+			</activation>
+			<properties>
+				<!-- emma instead of default one -->
+				<sonar.core.codeCoveragePlugin>emma</sonar.core.codeCoveragePlugin>
+				<!-- MYSQL -->
+				<sonar.jdbc.url>
+					jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8
+                </sonar.jdbc.url>
+				<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+				<sonar.jdbc.username>root</sonar.jdbc.username>
+
+				<sonar.jdbc.password>1</sonar.jdbc.password>
+
+				<!-- SERVER ON A REMOTE HOST -->
+				<sonar.host.url>http://127.0.0.1:9001/sonar/</sonar.host.url>
+
+			</properties>
+		</profile>
+	</profiles>
+</project>

@@ -1,0 +1,16 @@
+<configuration>
+
+    <contextName>multimedia-portal</contextName>
+
+    <logger level="TRACE"/>
+
+    <appender name="appender_1" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+	<root level="info">
+       <appender-ref ref="appender_1" />
+	</root>
+</configuration>

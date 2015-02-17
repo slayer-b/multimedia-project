@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.adv.core.model.DefaultsContent" table="defaults_content">
+    <id column="id" name="id">
+      <generator class="identity"/>
+    </id>
+    <discriminator column="content_type" length="60" type="string"/>
+    <property column="width" length="60" name="width" type="string"/>
+    <property column="height" length="60" name="height" type="string"/>
+    <property column="content_type" insert="false" length="60" name="content_type" update="false">
+      <type name="org.hibernate.type.EnumType">
+        <param name="enumClass">com.adv.core.types.ContentType</param>
+        <param name="type">12</param>
+      </type>
+    </property>
+  </class>
+</hibernate-mapping>

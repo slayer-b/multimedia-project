@@ -1,0 +1,35 @@
+<configuration>
+
+    <contextName>advertisement-system</contextName>
+
+    <if condition='property("os.name").contains("Windows Vista")'>
+        <then>
+			<appender name="appender1" class="ch.qos.logback.core.ConsoleAppender">
+			    <encoder>
+			        <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			    </encoder>
+			</appender>
+        </then>
+        <else>
+		    <appender name="appender1" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		        <file>${catalina.base}/logs/adv-system/debug.log</file>
+		        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		            <!-- daily rollover -->
+		            <fileNamePattern>debug.%d{yyyy-MM-dd}.log</fileNamePattern>
+		            <!-- keep 30 days' worth of history -->
+		            <maxHistory>30</maxHistory>
+		        </rollingPolicy>
+		        <encoder>
+		            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		        </encoder>
+		    </appender>
+        </else>
+    </if>
+
+    <logger name="org.hibernate.tool.hbm2ddl" level="ERROR"/>
+    <logger name="com.adv" level="DEBUG"/>
+
+	<root level="info">
+	   <appender-ref ref="appender1" />
+	</root>
+</configuration>

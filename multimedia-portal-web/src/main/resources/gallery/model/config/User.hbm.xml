@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.multimedia.security.model.User" table="users">
+    <id name="id" type="java.lang.Long">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string">
+      <column name="name" not-null="true"/>
+    </property>
+    <property name="email" type="string">
+      <column name="email" not-null="true"/>
+    </property>
+    <property name="login" type="string">
+      <column length="255" name="login" not-null="true" sql-type="CHAR(255)"/>
+    </property>
+    <property name="last_accessed" type="timestamp">
+      <column name="last_accessed"/>
+    </property>
+    <set cascade="all,delete-orphan" fetch="subselect" inverse="true" name="roles">
+      <key foreign-key="FK_user_roles" on-delete="cascade">
+        <column name="id_users" not-null="true"/>
+      </key>
+      <one-to-many entity-name="com.multimedia.security.model.Role"/>
+    </set>
+  </class>
+</hibernate-mapping>

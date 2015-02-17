@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <mapping resource="com/adv/core/model/User.hbm.xml"/>
+    <mapping class="com.adv.core.model.Block"/>
+    <mapping class="com.adv.core.model.BlockLocation"/>
+    <mapping class="com.adv.core.model.LocationPage"/>
+    <mapping class="com.adv.core.model.LocationSite"/>
+    <mapping class="com.adv.core.model.BlockContent"/>
+    <mapping class="com.adv.core.model.ContentAdv"/>
+    <mapping class="com.adv.core.model.ItemAdv"/>
+    <mapping class="com.adv.core.model.ContentLink"/>
+    <mapping class="com.adv.core.model.ItemLink"/>
+    <mapping class="com.adv.core.model.ItemLinkStats"/>
+    <mapping class="com.adv.core.model.UserDefaults"/>
+    <mapping class="com.adv.core.model.DefaultsContent"/>
+    <mapping class="com.adv.core.model.DefaultsConAdv"/>
+    <mapping class="com.adv.core.model.DefaultsConLink"/>
+    <mapping class="com.adv.payment.model.PricesSystem"/>
+    <mapping class="com.adv.payment.model.AdvPaymentUnits"/>
+    <mapping class="com.adv.order.model.OrderUnits"/>
+    <mapping class="com.adv.order.model.OrderSupplantation"/>
+    <mapping class="com.adv.order.model.OrderClicks"/>
+    <mapping class="com.adv.order.model.OrderViews"/>
+    <mapping class="com.adv.order.model.OrderDuration"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,19 @@
+﻿#hello_text
+{
+    position: relative;
+    top: -134px;
+    left: 300px;
+    vertical-align: top;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    color: White;
+}
+#hello_text #username
+{
+    font-weight: bold;
+}
+#hello_text #balance
+{
+    font-size: 14pt;
+}

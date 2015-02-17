@@ -1,0 +1,35 @@
+
+.QrSpinner {
+    padding: 1px;
+    position:relative;
+    z-index:0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.QrSpinnerImg {
+    display: inline-block;
+    height: 22px;
+    width: 18px;
+    border-width: 0px;
+    background-position: left bottom;
+    vertical-align: top;
+}
+
+div.QrSpinnerImgNormal {
+    background-image: url("../../img/qr/spinner-normal.gif");
+}
+
+div.QrSpinnerImgDown {
+    background-image: url("../../img/qr/spinner-downdown.gif");
+}
+
+div.QrSpinnerImgUp {
+    background-image: url("../../img/qr/spinner-updown.gif");
+}
+
+input.QrSpinnerInput {
+    height:16px;
+    padding-left:2px;
+    vertical-align: top;
+}

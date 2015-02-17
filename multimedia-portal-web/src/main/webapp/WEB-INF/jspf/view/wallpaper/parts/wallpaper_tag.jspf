@@ -1,0 +1,2 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<a href="index.htm?id_pages_nav=${item.id_pages}&amp;id_photo_nav=${item.id}${page_params}"><img title="${item.description}" alt="${item.title}" src="${pageContext.servletContext.contextPath}/images/wallpaper/small/${item.folderAndName}"></a>

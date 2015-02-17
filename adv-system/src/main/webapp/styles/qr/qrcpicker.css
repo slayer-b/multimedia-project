@@ -1,0 +1,41 @@
+
+div.QRtransparent {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-width: 0px;
+    background-image: url("../../img/qr/grid.gif");
+    background-position: left top;
+}
+
+div.QRgraybar {
+    display: inline-block;
+    width: 192px;
+    height: 8px;
+    cursor: crosshair;
+    border-width: 0px;
+    background-image: url("../../img/qr/graybar.jpg");
+    background-position: left top;
+}
+
+div.QRcolorpicker {
+    display: inline-block;
+    width: 192px;
+    height: 128px;
+    cursor: crosshair;
+    border-width: 0px;
+    background-image: url("../../img/qr/colorpicker.jpg");
+    background-position: left top;
+}
+
+div.QRchosenColor {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: gray;
+    border-style: inset;
+    background-position: left top;
+    vertical-align: middle;
+}

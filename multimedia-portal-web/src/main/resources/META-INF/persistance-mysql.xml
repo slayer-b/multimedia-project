@@ -1,0 +1,36 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="multimedia-portal-mysql" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>com.multimedia.model.beans.Counter</class>
+        <class>gallery.model.beans.Wallpaper</class>
+        <class>gallery.model.beans.PagesPseudonym</class>
+        <class>gallery.model.beans.WallpaperComment</class>
+        <class>gallery.model.beans.WallpaperRating</class>
+        <class>com.multimedia.model.beans.PagesFolder</class>
+        <class>gallery.model.beans.Autoreplace</class>
+        <class>gallery.model.beans.AutoreplaceL</class>
+        <class>com.multimedia.model.beans.AdvertisementPages</class>
+        <class>com.multimedia.model.beans.Advertisement</class>
+        <class>com.multimedia.model.beans.Locale</class>
+        <class>gallery.model.beans.Resolution</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
+            <property name="hibernate.current_session_context_class"
+                      value="org.springframework.orm.hibernate4.SpringSessionContext"/>
+            <property name="hibernate.connection.autocommit" value="true"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.region.factory_class"
+                      value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+                      <!--value="net.sf.ehcache.hibernate.EhCacheRegionFactory"/>-->
+            <!--<property name="hibernate.cache.provider_configuration_file_resource_path"-->
+            <property name="net.sf.ehcache.configurationResourceName"
+                      value="/gallery/cache/ehcache-hibernate.xml"/>
+            <property name="hibernate.ejb.cfgfile" value="/META-INF/hibernate.hbm.xml"/>
+        </properties>
+    </persistence-unit>
+</persistence>
