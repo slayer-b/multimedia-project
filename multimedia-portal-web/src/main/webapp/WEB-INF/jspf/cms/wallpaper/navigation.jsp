@@ -8,7 +8,7 @@
 <c:if test="${pages_navigation ne null}">
 &gt;&nbsp;<a class="link" href="../pages/index.htm">Страницы</a>
 <c:forEach items="${pages_navigation}" var="navigItem">
-&gt;&nbsp;<a class="link" href="../pages/index.htm?id_pages_nav=${navigItem.id}">${navigItem.name}</a>
+&gt;&nbsp;<a class="link" href="../pages/index.htm?do=view&id_pages_nav=${navigItem.id}">${navigItem.name}</a>
 </c:forEach>
 </c:if>
 &gt;&nbsp;<a class="link" href="index.htm?do=view<util:removeParam url="keep_parameters" parameterName="do"/>">Фото</a>
