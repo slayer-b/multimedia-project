@@ -256,6 +256,7 @@ div.wall_m {
     padding: 5px 3px 10px;
     width: 230px;
     vertical-align: top;
+    transition: padding 0.2s;
 }
 
 div.wall_m:hover {
