@@ -43,7 +43,7 @@ public class GenericServiceImpl<T, ID extends Serializable> implements IGenericS
 
     @Override
     public void save(T entity) {
-        dao.makePersistent(entity);
+        dao.update(entity);
     }
 
     @Override
