@@ -98,7 +98,9 @@ public class CmsWallpaperService extends AGenericCmsService<Wallpaper, Long> imp
 	@Override
 	public int update(Wallpaper command) {
 		if (command.getContent() == null) {
-			if (wallpaperService.renameFiles(command)) {
+			Wallpaper old = wallpaperService.getById(command.getId());
+			wallpaperService.evict(old);
+			if (wallpaperService.renameFiles(command, old)) {
 				//we just need to update rows in database
 				wallpaperService.save(command);
 			}

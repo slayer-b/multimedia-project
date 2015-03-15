@@ -149,4 +149,6 @@ public interface IGenericService<T, ID extends Serializable> {
      * @return class of bean that is used to retrieve data
      */
     Class<T> getBeanClass();
+
+    void evict(T entity);
 }

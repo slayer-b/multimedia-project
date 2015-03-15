@@ -528,4 +528,5 @@ public interface IGenericDAO<T, ID extends Serializable> {
      */
     Class<T> getPersistentClass();
 
+    void evict(T entity);
 }

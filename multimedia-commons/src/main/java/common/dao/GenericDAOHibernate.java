@@ -17,10 +17,9 @@
 package common.dao;
 
 import common.hibernate.HQLPartGenerator;
-import org.hibernate.*;
-import org.hibernate.engine.spi.EntityKey;
-import org.hibernate.engine.spi.SessionImplementor;
-import org.hibernate.persister.entity.EntityPersister;
+import org.hibernate.Filter;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.transform.AliasToBeanResultTransformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +31,6 @@ import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @param <T>
@@ -744,21 +742,6 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements IGeneric
     @Override
     @Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
     public void makePersistent(T entity) {
-
-        SessionImplementor sessionImpl = (SessionImplementor) getCurrentSession();
-        EntityPersister entityPersister = sessionImpl.getFactory().getEntityPersister(entityName);
-        org.hibernate.engine.spi.PersistenceContext persistenceContext = sessionImpl.getPersistenceContext();
-        Map entityEntries = persistenceContext.getEntityEntries();
-        for (Object o : entityEntries.values()) {
-            logger.error(o.toString());
-//            logger.error(o + " : " + entityEntries.get(o));
-        }
-
-        System.out.println("---------------------------");
-        System.out.println("---------------------------");
-        System.out.println("---------------------------");
-        System.out.println("---------------------------");
-        System.out.println("---------------------------");
         getCurrentSession().saveOrUpdate(entityName, entity);
     }
 
@@ -987,4 +970,8 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements IGeneric
         getCurrentSession().disableFilter(name);
     }
 
+    @Override
+    public void evict(T entity) {
+        getCurrentSession().evict(entity);
+    }
 }
