@@ -27,7 +27,7 @@ public class Config extends ControllerConfig implements IPagesConfig{
 	public static final String CURRENT_PAGE_ATTRIBUTE = "page";
 	public static final String PAGE_KEEP_PARAMETERS = "page_params";
 
-	public static final String[] NAVIGATION_PSEUDONYMES = {"id","id_pages","name","type"};
+	public static final String[] NAVIGATION_PSEUDONYMES = {"id","id_pages","name","type", "active"};
 
 	private String site_config_attr = "site_config";
 

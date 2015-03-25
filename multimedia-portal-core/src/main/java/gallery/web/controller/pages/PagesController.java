@@ -121,13 +121,21 @@ public class PagesController {
 
         request.setAttribute(Config.CURRENT_PAGE_ATTRIBUTE, page);
 
+        //getting navigation
+        List<Pages> navigation = pagesService.getAllPagesParents(page.getId(), Config.NAVIGATION_PSEUDONYMES);
+        for (Pages nav : navigation) {
+            if (!nav.getActive()) {
+                page = null;
+                break;
+            }
+        }
+
         //getting its type
         UrlBean url = null;
 
         if (page != null) {
             request.setAttribute(commonConf.getSiteConfigAttribute(), siteConfigService.getInstance());
-            //getting navigation
-            List<Pages> navigation = pagesService.getAllPagesParents(page.getId(), Config.NAVIGATION_PSEUDONYMES);
+
             request.setAttribute(commonConf.getNavigationDataAttribute(), navigation);
 
             url = getType(page).execute(request, response);
@@ -193,6 +201,7 @@ public class PagesController {
             }
             if (p == null || !p.getActive()) {
                 CommonAttributes.addErrorMessage("not_exists.page", request);
+                p = null;
             }
         }
         if (id == null || p == null || !p.getActive()) {

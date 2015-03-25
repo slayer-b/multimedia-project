@@ -117,6 +117,9 @@ public class PagesServiceImpl extends GenericServiceImpl<Pages, Long> implements
 
     @Override
     public List<Pages> getAllPagesParents(Long id, String[] property_names) {
+        if (id == null) {
+            return null;
+        }
         List<Pages> temp = pagesDAO.getAllParentsRecursive(id, property_names, property_names);
         if (temp == null) {
             return null;

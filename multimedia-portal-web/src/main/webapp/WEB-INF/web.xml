@@ -97,14 +97,14 @@
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
-    <!--servlet>
+    <servlet>
         <servlet-name>antiSpamCode</servlet-name>
         <servlet-class>common.web.servlets.RandomImageServ</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>antiSpamCode</servlet-name>
         <url-pattern>/images/code.jpg</url-pattern>
-    </servlet-mapping-->
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>externalServlet</servlet-name>
