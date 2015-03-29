@@ -49,7 +49,7 @@ var module_params="${page_params}";
 <%@include file="../../jspf/view/parts/top.jspf" %>
 <% time_top = System.currentTimeMillis() - time_top; %>
 <div class="top_bg3"></div>
-<div><${system_add_wallpaper_page}></div>
+<div>${system_add_wallpaper_page}</div>
 <c:if test="${system_add_wallpaper_page ne null}">
 <div class="add_wallpaper" align="center"><a href="?id_pages_nav=${system_add_wallpaper_page.id}&amp;id_pages=${param['id_pages_nav']}">${system_add_wallpaper_page.name}</a></div>
 </c:if>
