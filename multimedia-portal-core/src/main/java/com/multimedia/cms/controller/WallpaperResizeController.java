@@ -17,7 +17,6 @@
 package com.multimedia.cms.controller;
 
 import com.multimedia.exceptions.ResolutionNotFound;
-import com.multimedia.exceptions.WallpaperNotFound;
 import com.multimedia.service.IResolutionService;
 import com.multimedia.service.IWallpaperService;
 import common.services.IStaticsService;
@@ -27,13 +26,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -116,21 +109,6 @@ public class WallpaperResizeController {
                 resolutionService.getRowCount(RESOLUTION_WIDTH_HEIGHT, new Object[]{resolutionX, resolutionY}) != 1L) {
             throw new ResolutionNotFound(resolutionX, resolutionY);
         }
-    }
-
-    @ExceptionHandler
-    public HttpEntity<String> handleError(IOException ex) {
-        MultiValueMap<String, String> map = new HttpHeaders();
-        map.add("Content-Type", "text/html;charset=UTF-8");
-        return new ResponseEntity<String>(ex.getMessage(), map, HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler({WallpaperNotFound.class, ResolutionNotFound.class})
-    public HttpEntity<String> resourceNotFound(RuntimeException ex) {
-        //I added this to remove "image/jpg" header that was set by an original request handler.
-        MultiValueMap<String, String> map = new HttpHeaders();
-        map.add("Content-Type", "text/html;charset=UTF-8");
-        return new ResponseEntity<String>(ex.getMessage(), map, HttpStatus.NOT_FOUND);
     }
 
 }

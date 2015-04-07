@@ -147,7 +147,6 @@ public class PagesController {
 
                 loadSubmodules(navigation, request, url.getSubmodules());
 
-                System.out.println(url.getSubmodules().keySet());
                 createRubrication(request, page);
 
                 request.setAttribute(COUNTERS_ATTRIBUTE, pagesViewService.getCounters());
@@ -170,7 +169,7 @@ public class PagesController {
         } else {
             submodules = new HashMap<String, ASubmodule>(COMMON_SUBMODULES);
         }
-        System.out.println(submodules);
+
         submodules.put(EMailSendType.TYPE, new EmptySubmodule());
         pagesService.activateSubmodules(navigation, submodules);
         //TODO: remake

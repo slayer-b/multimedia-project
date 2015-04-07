@@ -436,7 +436,6 @@ public class WallpaperCmsController extends AGenericPagesCmsController<Wallpaper
 
     @InitBinder
     public void initUploadBinder(WebDataBinder binder) {
-        logger.debug("Setting bind empty multipart files = false");
         binder.setBindEmptyMultipartFiles(false);
     }
 
