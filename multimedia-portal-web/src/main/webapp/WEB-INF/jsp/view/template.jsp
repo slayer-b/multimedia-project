@@ -20,9 +20,9 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1-ie7.css"/>">
 <![endif]-->
 
-<script type="text/javascript" src="<c:url value='/scripts/jquery-1.8.3.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/scripts/ui/js/jquery-ui-1.9.2.custom.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/scripts/script1.js'/>"></script>
+<script async type="text/javascript" src="<c:url value='/scripts/jquery-1.8.3.min.js'/>"></script>
+<script async type="text/javascript" src="<c:url value='/scripts/ui/js/jquery-ui-1.9.2.custom.min.js'/>"></script>
+<script async type="text/javascript" src="<c:url value='/scripts/script1.js'/>"></script>
 <%--<script type="text/javascript" src="<c:url value='/scripts/bootstrap.min.js'/>"></script>--%>
 <script type="text/javascript">
 var context_path="${pageContext.servletContext.contextPath}";

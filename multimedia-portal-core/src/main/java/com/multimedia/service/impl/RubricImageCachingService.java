@@ -118,7 +118,7 @@ public class RubricImageCachingService implements IRubricImageService {
                     BufferedImageHolder holder = ImageUtils.readImage(src);
                     BufferedImage rez = new BufferedImage(imageWidth, imageHeight, BufferedImage.TYPE_3BYTE_BGR);
                     ImageUtils.getScaledImageDimension(holder.getImage(), rez);
-                    ImageUtils.writeImage(rez, 1f, dst);
+                    ImageUtils.writeImage(rez, -1f, dst);
                 } catch (IOException ex) {
                     logger.error("error while creating image for rubric; ", ex);
                     succeed = false;
