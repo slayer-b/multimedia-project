@@ -13,12 +13,6 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1.css"/>">
 <link rel="stylesheet" type="text/css" href="<c:url value='/scripts/ui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css'/>">
 <%--<link rel="stylesheet" type="text/css" href="<c:url value="/styles/bootstrap.min.css"/>">--%>
-<!--[if IE 6]>
-<link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1-ie7.css"/>">
-<![endif]-->
-<!--[if IE 7]>
-<link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1-ie7.css"/>">
-<![endif]-->
 
 <script async type="text/javascript" src="<c:url value='/scripts/jquery-1.8.3.min.js'/>"></script>
 <script async type="text/javascript" src="<c:url value='/scripts/ui/js/jquery-ui-1.9.2.custom.min.js'/>"></script>
