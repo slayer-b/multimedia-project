@@ -46,7 +46,6 @@
 <html>
 <head>
     <title>Precompiling *.JSPs</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/styles/styles.css">
 </head>
 <body>
 <h4><a href="index.htm" style="text-decoration:none;color:black;font-size:16px;"><--Back</a></h4>
