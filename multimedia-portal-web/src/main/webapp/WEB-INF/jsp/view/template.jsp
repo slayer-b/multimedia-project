@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <jsp:include page="${url.optimization}"/>
 <link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1.css"/>">
-<link rel="stylesheet" type="text/css" href="<c:url value='/scripts/ui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css'/>">
+<%--<link rel="stylesheet" type="text/css" href="<c:url value='/scripts/ui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css'/>">--%>
 <%--<link rel="stylesheet" type="text/css" href="<c:url value="/styles/bootstrap.min.css"/>">--%>
 
 <script async type="text/javascript" src="<c:url value='/scripts/jquery-1.8.3.min.js'/>"></script>
