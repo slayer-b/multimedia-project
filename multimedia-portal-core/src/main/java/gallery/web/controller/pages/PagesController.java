@@ -18,6 +18,7 @@ package gallery.web.controller.pages;
 
 import com.multimedia.core.pages.types.APagesType;
 import com.multimedia.core.pages.types.IPagesType;
+import com.multimedia.exceptions.WallpaperNotFound;
 import com.multimedia.service.IAutoreplaceService;
 import com.multimedia.service.IPagesService;
 import com.multimedia.service.IPagesServiceView;
@@ -199,8 +200,9 @@ public class PagesController {
                 //silent catch
             }
             if (p == null || !p.getActive()) {
-                CommonAttributes.addErrorMessage("not_exists.page", request);
-                p = null;
+                throw new WallpaperNotFound("not_exists.page");
+//                CommonAttributes.addErrorMessage("not_exists.page", request);
+//                p = null;
             }
         }
         if (id == null || p == null || !p.getActive()) {

@@ -195,9 +195,11 @@ public class WallpaperGalleryType extends AWallpaperType {
         Wallpaper curWallpaper = wallpaperService.getById(id_wallpaper2 == null ? id_wallpaper : id_wallpaper2);
         if ((curWallpaper == null) || (!curWallpaper.getId_pages().equals(p.getId()))) {
             //and set an error if this wallpaper not exists or is not from this pages
-            CommonAttributes.addErrorMessage("not_exists.wallpaper", request);
-            category(request, p, navigation, totalCount, url);
-            return;
+//            CommonAttributes.addErrorMessage("not_exists.wallpaper", request);
+//            category(request, p, navigation, totalCount, url);
+//            return;
+            throw new WallpaperNotFound("not_exists.wallpaper");
+
         }
         if (!curWallpaper.getActive()) {
             throw new WallpaperNotFound(curWallpaper.getName(), curWallpaper.getFolder());
