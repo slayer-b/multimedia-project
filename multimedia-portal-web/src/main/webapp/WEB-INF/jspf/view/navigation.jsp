@@ -8,12 +8,3 @@
 &gt;&nbsp;<a href="index.htm?id_pages_nav=${navigItem.id}&amp;id_photo_nav=${big_wallpaper.id}${r_q_params}">Скачать обои</a></c:when><c:when test="${(i.last)&&(not empty param['page_number'])}">
 &gt;&nbsp;<a href="index.htm?id_pages_nav=${navigItem.id}&amp;page_number=${param['page_number']}${r_q_params}">${navigItem.name}</a></c:when><c:otherwise>
 &gt;&nbsp;<a href="index.htm?id_pages_nav=${navigItem.id}${r_q_params}">${navigItem.name}</a></c:otherwise></c:choose></c:forEach>
-
-<script type="text/javascript">
-    var text = 'Картинки содержатся только в последних разделах.\n\
- Чтобы скачать картинку зайдите, например, в "Обои для рабочего стола>Животные>Динозавры>Диплодок", выберите картинку которую хотите скачать.\n\
- Над картинкой вы видите разрешения для этой картинки, нажмите на подходящее вам.\n\
- Если вы не знаете какое разрешение выбрать, выберите оригинал.';
-    function answer(){window.alert(text);}
-</script>
-<span style="float:right;"><a href="javascript:answer();">Как скачать?</a></span>
