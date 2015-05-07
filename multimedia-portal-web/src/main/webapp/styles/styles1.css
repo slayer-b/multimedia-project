@@ -773,7 +773,7 @@ div.adv_bottom {
 }
 
 /* mobile devices */
-@media all and (max-width: 720px) {
+@media all and (max-width: 600px) {
     a.r_0 {
         font-size: 18px;
     }
@@ -794,6 +794,9 @@ div.adv_bottom {
     }
     div.wall_m_b_t_r a {
         font-size: 16px;
+    }
+    td.left, td.right {
+        display: none;
     }
 }
 
