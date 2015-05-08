@@ -385,14 +385,12 @@ a.category_comment {
 /* pages categories */
 
 /* counter */
-table.counters {
+div.counters {
     height: 75px;
-}
-
-table.counters tr td {
     padding-left: 10px;
     white-space: nowrap;
     vertical-align: middle;
+    display: inline-block;
 }
 
 /* counter */
@@ -769,6 +767,7 @@ div.adv_right_bottom {
 }
 
 div.adv_bottom {
+    display: inline-block;
     margin: 8px;
 }
 
