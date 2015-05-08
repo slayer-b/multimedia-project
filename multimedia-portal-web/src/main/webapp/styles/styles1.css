@@ -386,7 +386,8 @@ a.category_comment {
 
 /* counter */
 div.counters {
-    height: 75px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding-left: 10px;
     white-space: nowrap;
     vertical-align: middle;
