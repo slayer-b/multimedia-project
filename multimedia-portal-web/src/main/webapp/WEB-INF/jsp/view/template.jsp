@@ -8,6 +8,7 @@
    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <jsp:include page="${url.optimization}"/>
 <link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1.css"/>">
