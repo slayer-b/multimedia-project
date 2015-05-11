@@ -346,35 +346,12 @@ a.r_0 {
     text-decoration: none;
 }
 
-/*rubrication level 0*/
-a.r_0:hover {
-    text-decoration: underline;
-}
-
-div.r_0_l {
-    padding-left: 9px;
-    background: url(../img/rubrication/rubrication_level0_left.jpg) no-repeat left top;
-}
-
-div.r_0_r {
-    padding-right: 5px;
-    background: url(../img/rubrication/rubrication_level0_right.jpg) no-repeat right top;
-}
-
-div.r_0_c {
-    white-space: nowrap;
-    height: 26px;
-    padding-top: 7px;
-    background: url(../img/rubrication/rubrication_level0_bg.jpg) repeat-x top;
-    padding-left: 7px;
-}
+/*rubrication level 1*/
 
 div.r_1 {
     padding-left: 16px;
     margin-top: 6px;
 }
-
-/*rubrication level 1*/
 div.r_1 a {
     font-size: 12px;
     font-family: arial, serif;
@@ -663,6 +640,7 @@ div.adv_bottom {
     margin: 8px;
 }
 
+/*wallpaper main*/
 div.wall-main-txt {
     padding: 3px 13px 3px 13px;
     background: #5185C8;
@@ -697,6 +675,18 @@ div.wall-main {
 div.wall-main:hover {
     padding: 12px 6px 5px 8px;
 }
+/*wallpaper main*/
+
+/*rubrication*/
+div.r-l-0 {
+    border-radius: 6px;
+    border: 3px solid #F6F6F6;
+    border-top-width: 2px;
+    padding:3px 5px 6px 12px;
+    margin: 1px 0 1px 3px;
+    background: #FBFBFB linear-gradient(#FBFBFB, #FFFFFF);
+}
+/*rubrication*/
 
 /* mobile devices */
 @media only screen and (max-width: 600px) {
