@@ -1,0 +1,16 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:forEach items="${categories}" var="category" varStatus="i"><c:set var="page_number"><c:if
+        test="${category.last}">&amp;page_number=0</c:if></c:set>
+    <div class="wall-main">
+        <div class="wall-main-img">
+            <div><a href="index.htm?id_pages_nav=${category.id}${page_number}${page_params}"><img
+                    alt="Перейти в подраздел - ${category.name}"
+                    src="${pageContext.servletContext.contextPath}/${wallpapers[i.index]}"
+                    title="Перейти в подраздел - ${category.name}"></a></div>
+        </div>
+        <div class="wall-main-txt">
+            <a href="index.htm?id_pages_nav=${category.id}${page_number}${page_params}">${category.name}</a>
+        </div>
+    </div>
+</c:forEach>

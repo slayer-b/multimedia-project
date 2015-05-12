@@ -245,7 +245,116 @@ td.nav_pages_cur {
 }
 
 /* page navigation */
+/* wallpaper main*/
+div.wall_m {
+    display: inline-block;
+    padding: 5px 3px 10px;
+    width: 230px;
+    vertical-align: top;
+    transition: padding 0.2s;
+}
 
+div.wall_m:hover {
+    padding: 11px 6px 4px 0;
+}
+
+div.wall_main_top {
+    height: 7px;
+    width: auto;
+    padding-left: 8px;
+    background: url(../img/cont/main/top_left.jpg) no-repeat left;
+}
+
+div.wall_main_top div {
+    height: 7px;
+    width: auto;
+    padding-right: 8px;
+    background: url(../img/cont/main/top_right.jpg) no-repeat right;
+}
+
+div.wall_main_top div div {
+    height: 7px;
+    width: auto;
+    background: url(../img/cont/main/top_bg.jpg) repeat-x;
+}
+
+div.wall_main_img {
+    height: 100%;
+    width: auto;
+    padding-left: 8px;
+    background: url(../img/cont/main/left_bg.jpg) repeat-y left;
+}
+
+div.wall_main_img div {
+    height: 100%;
+    width: auto;
+    padding-right: 8px;
+    background: url(../img/cont/main/right_bg.jpg) repeat-y right;
+}
+
+div.wall_main_img div a img {
+    margin-bottom: 5px;
+    margin-top: 1px;
+}
+
+div.wall_m_b_l {
+    height: 20px;
+    padding-left: 8px;
+    background: url(../img/cont/main/bottom_left.jpg) no-repeat left;
+}
+
+/* bottom left*/
+div.wall_m_b_r {
+    height: 20px;
+    padding-right: 8px;
+    background: url(../img/cont/main/bottom_right.jpg) no-repeat right;
+}
+
+/* bottom right*/
+div.wall_m_b_b {
+    height: 20px;
+    width: 100%;
+    background: url(../img/cont/main/bottom_bg.jpg) repeat-x;
+}
+
+/* bottom background*/
+div.wall_m_b_t_l {
+    height: 20px;
+    padding-left: 7px;
+    background: url(../img/cont/main/text_left.jpg) no-repeat left top;
+}
+
+/* text left*/
+div.wall_m_b_t_b {
+    height: 20px;
+    width: 80%;
+    background: url(../img/cont/main/text_bg.jpg) repeat-x;
+}
+
+/* text background*/
+div.wall_m_b_t_r {
+    height: 20px;
+    padding-right: 7px;
+    padding-top: 3px;
+    background: url(../img/cont/main/text_right.jpg) no-repeat right top;
+}
+
+/* text right*/
+
+div.wall_m_b_t_r a {
+    white-space: nowrap;
+    font-size: 12px;
+    font-family: arial, serif;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div.wall_m_b_t_r:hover a {
+    text-decoration: underline;
+}
+
+/* wallpaper main*/
 /* pages categories */
 a.category {
     font-size: 12px;
@@ -346,12 +455,35 @@ a.r_0 {
     text-decoration: none;
 }
 
-/*rubrication level 1*/
+/*rubrication level 0*/
+a.r_0:hover {
+    text-decoration: underline;
+}
+
+div.r_0_l {
+    padding-left: 9px;
+    background: url(../img/rubrication/rubrication_level0_left.jpg) no-repeat left top;
+}
+
+div.r_0_r {
+    padding-right: 5px;
+    background: url(../img/rubrication/rubrication_level0_right.jpg) no-repeat right top;
+}
+
+div.r_0_c {
+    white-space: nowrap;
+    height: 26px;
+    padding-top: 7px;
+    background: url(../img/rubrication/rubrication_level0_bg.jpg) repeat-x top;
+    padding-left: 7px;
+}
 
 div.r_1 {
     padding-left: 16px;
     margin-top: 6px;
 }
+
+/*rubrication level 1*/
 div.r_1 a {
     font-size: 12px;
     font-family: arial, serif;
@@ -638,9 +770,7 @@ div.adv_right_bottom {
 div.adv_bottom {
     display: inline-block;
     margin: 8px;
-}
-
-/*wallpaper main*/
+}        /*wallpaper main*/
 div.wall-main-txt {
     padding: 3px 13px 3px 13px;
     background: #5185C8;
@@ -706,6 +836,9 @@ div.r-l-0 {
         font-size: 16px;
     }
     body {
+        font-size: 16px;
+    }
+    div.wall_m_b_t_r a {
         font-size: 16px;
     }
     td.left, td.right {
