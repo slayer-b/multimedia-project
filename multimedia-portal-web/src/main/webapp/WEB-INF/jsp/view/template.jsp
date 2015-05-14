@@ -12,7 +12,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <jsp:include page="${url.optimization}"/>
 
-<style type="text/css"><c:import url="/styles/styles1.css"/></style>
+<style type="text/css">
+	<c:import url="/styles/styles1.css"/>
+	/*production*/
+	<%--<c:import url="/styles/styles1-min.css"/>--%>
+</style>
 
 <%--<link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1.css"/>">--%>
 <%--<link rel="stylesheet" type="text/css" href="<c:url value='/scripts/ui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css'/>">--%>
