@@ -26,7 +26,7 @@
     <tr><td align="center"><table>
 		<tr><td class=bold>Код *:</td>
 		<td><input type=text name="code" maxlength='4' class=antispam_code></td>
-		<td><img alt="включите рисунки чтобы увидеть защиный код" title="Введите код, который изображен на картинке" src="${pageContext.servletContext.contextPath}/images/code.jpg"></td></tr>
+		<td><img alt="включите рисунки чтобы увидеть защиный код" title="Введите код, который изображен на картинке" src="${pageContext.servletContext.contextPath}/code.jpg"></td></tr>
     </table></td></tr>
     <tr align="right"><td><input type="submit" value="Сохранить"></td></tr>
     <tr align="center"><td class="banner_content">${banner_content_center.html}</td></tr>

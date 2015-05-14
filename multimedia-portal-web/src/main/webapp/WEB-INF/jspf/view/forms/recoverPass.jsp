@@ -13,7 +13,7 @@
     <tr><td align="center"><table>
 		<tr><td class=bold>Код *:</td>
 		<td><input type=text name="antispam_code" maxlength='4' class=user_field_text_spam></td>
-		<td><img alt="включите рисунки чтобы увидеть защиный код" title="Введите код, который изображен на картинке" src="${pageContext.servletContext.contextPath}/images/code.jpg"></td></tr>
+		<td><img alt="включите рисунки чтобы увидеть защиный код" title="Введите код, который изображен на картинке" src="${pageContext.servletContext.contextPath}/code.jpg"></td></tr>
     </table></td></tr>
     <input type=hidden name="action" value="insert">
     <tr align="right"><td><input type="submit" value="Восстановить"></td></tr>

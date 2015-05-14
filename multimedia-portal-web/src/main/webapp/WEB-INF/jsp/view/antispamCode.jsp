@@ -25,7 +25,7 @@ if (!"anti_spam_code".equals(name)){%><input type="hidden" name="<%= name%>" val
 }%>
 <b>Код&nbsp;*:</b><br><br>
 <div><input type=text name="anti_spam_code" maxlength='4' class=antispam_code><input type="submit" value="ok"></div><br>
-<img alt="включите рисунки чтобы увидеть защиный код" title="Введите код, который изображен на картинке" src="${pageContext.servletContext.contextPath}/images/code.jpg">
+<img alt="включите рисунки чтобы увидеть защиный код" title="Введите код, который изображен на картинке" src="${pageContext.servletContext.contextPath}/code.jpg">
 </form>
 </body>
 </html>

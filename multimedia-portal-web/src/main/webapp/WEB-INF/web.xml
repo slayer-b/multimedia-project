@@ -102,7 +102,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>antiSpamCode</servlet-name>
-        <url-pattern>/images/code.jpg</url-pattern>
+        <url-pattern>/code.jpg</url-pattern>
     </servlet-mapping>
 
     <servlet>

@@ -75,7 +75,7 @@ public class Initializer {
     private static void registerAntispamImage(ServletContext servletContext) {
         ServletRegistration.Dynamic randomImageServ = servletContext.addServlet(
                 "antiSpamCode", new RandomImageServ());
-        randomImageServ.addMapping("/images/code.jpg");
+        randomImageServ.addMapping("/code.jpg");
     }
 
     private static void registerRootContext(ServletContext servletContext) {
