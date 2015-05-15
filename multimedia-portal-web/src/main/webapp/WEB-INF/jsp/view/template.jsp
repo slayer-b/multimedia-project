@@ -12,20 +12,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <jsp:include page="${url.optimization}"/>
 
+<%--production--%>
 <style type="text/css">
 	<c:import url="/styles/styles1.css"/>
-	/*production*/
 	<%--<c:import url="/styles/styles1-min.css"/>--%>
 </style>
 
-<%--<link rel="stylesheet" type="text/css" href="<c:url value="/styles/styles1.css"/>">--%>
+<%--<link rel="sty/lesheet" type="text/css" href="<c:url value="/styles/styles1.css"/>">--%>
 <%--<link rel="stylesheet" type="text/css" href="<c:url value='/scripts/ui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css'/>">--%>
 <%--<link rel="stylesheet" type="text/css" href="<c:url value="/styles/bootstrap.min.css"/>">--%>
 
-<script async type="text/javascript" src="<c:url value='/scripts/jquery-1.8.3.min.js'/>"></script>
-<script async type="text/javascript" src="<c:url value='/scripts/ui/js/jquery-ui-1.9.2.custom.min.js'/>"></script>
-<script async type="text/javascript" src="<c:url value='/scripts/script1.js'/>"></script>
-<%--<script type="text/javascript" src="<c:url value='/scripts/bootstrap.min.js'/>"></script>--%>
 <script type="text/javascript">
 var context_path="${pageContext.servletContext.contextPath}";
 var module_name="${page.moduleName}";
@@ -83,5 +79,11 @@ var module_params="${page_params}";
 </td><td>
 </td></tr></table>
 </sec:authorize>
+
+<script type="text/javascript" src="<c:url value='/scripts/jquery-1.8.3.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/scripts/ui/js/jquery-ui-1.9.2.custom.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/scripts/script1.js'/>"></script>
+<%--<script type="text/javascript" src="<c:url value='/scripts/bootstrap.min.js'/>"></script>--%>
+
 </body>
 </html>
