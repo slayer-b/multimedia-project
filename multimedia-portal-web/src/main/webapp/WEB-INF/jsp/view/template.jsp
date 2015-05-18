@@ -83,5 +83,10 @@ var module_params="${page_params}";
 <script type="text/javascript" src="<c:url value='/scripts/script1.js'/>"></script>
 <%--<script type="text/javascript" src="<c:url value='/scripts/bootstrap.min.js'/>"></script>--%>
 
+<script type="text/javascript">
+	$("#wall_comment_form").bind('submit', comment_wallpaper);
+	$("#wall_anti_spam").bind('click', refresh_anti_spam);
+</script>
+
 </body>
 </html>

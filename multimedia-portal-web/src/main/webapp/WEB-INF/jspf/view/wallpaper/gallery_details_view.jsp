@@ -70,7 +70,6 @@ wallpaper_comment_id = ${system_wallpaperComment_add_page.id};
 <div align="right"><input type="submit" value="${system_wallpaperComment_add_page.name}"></div>
 </form>
 </div>
-<script type="text/javascript">$("#wall_comment_form").bind('submit', comment_wallpaper);</script>
 </c:if>
 
 </c:if>
