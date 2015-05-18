@@ -46,25 +46,23 @@ var module_params="${page_params}";
 <c:if test="${system_add_wallpaper_page ne null}">
 <div class="add_wallpaper" align="center"><a href="?id_pages_nav=${system_add_wallpaper_page.id}&amp;id_pages=${param['id_pages_nav']}">${system_add_wallpaper_page.name}</a></div>
 </c:if>
-<table width="100%" cellpadding="0" cellspacing="0"><tr valign="top">
-<td class="left">
-<%@include file="../../jspf/view/parts/left.jspf" %>
-</td>
 <%--content with navigation--%>
-<td class="content">
-<div class="top_nav"><jsp:include page="${url.navigation}"/></div>
-<div class="adv_content_top">${advertisement['content_top']}</div>
-<div class="info_top">${page.info_top}<c:if test="${(empty page.info_top)&&(not empty url.page_top)}"><jsp:include page="${url.page_top}"/></c:if></div>
-<div class="adv_content_top">${advertisement['content_top_post']}</div>
-<div class="content"><jsp:include page="${url.content}"/></div>
-<div class="adv_content_bottom">${advertisement['content_bottom_pre']}</div>
-<div class="info_bottom">${page.info_bottom}<c:if test="${(empty page.info_bottom)&&(not empty url.page_bottom)}"><jsp:include page="${url.page_bottom}"/></c:if></div>
-<div class="adv_content_bottom">${advertisement['content_bottom']}</div>
-</td>
-<%--right--%>
-<td class="right">
+<div class="center">
+	<div class="top_nav"><jsp:include page="${url.navigation}"/></div>
+	<div class="adv_content_top">${advertisement['content_top']}</div>
+	<div class="info_top">${page.info_top}<c:if test="${(empty page.info_top)&&(not empty url.page_top)}"><jsp:include page="${url.page_top}"/></c:if></div>
+	<div class="adv_content_top">${advertisement['content_top_post']}</div>
+	<div class="content"><jsp:include page="${url.content}"/></div>
+	<div class="adv_content_bottom">${advertisement['content_bottom_pre']}</div>
+	<div class="info_bottom">${page.info_bottom}<c:if test="${(empty page.info_bottom)&&(not empty url.page_bottom)}"><jsp:include page="${url.page_bottom}"/></c:if></div>
+	<div class="adv_content_bottom">${advertisement['content_bottom']}</div>
+</div>
+<div class="left">
+<%@include file="../../jspf/view/parts/left.jspf" %>
+</div>
+<div class="right">
 <%@include file="../../jspf/view/parts/right.jspf" %>
-</td></tr></table>
+</div>
 <div class="bottom_bg1"></div>
 <div class="bottom"><%@include file="../../jspf/view/parts/bottom.jspf" %></div>
 <sec:authorize ifAnyGranted="admin">
