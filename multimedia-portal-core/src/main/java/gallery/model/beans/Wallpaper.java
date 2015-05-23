@@ -17,17 +17,15 @@
 package gallery.model.beans;
 
 import com.multimedia.security.model.User;
-import org.hibernate.annotations.Filter;
-import org.hibernate.annotations.FilterDef;
-import org.hibernate.annotations.Filters;
-import org.hibernate.annotations.ForeignKey;
-import org.hibernate.annotations.Formula;
-import org.hibernate.annotations.ParamDef;
+import org.hibernate.annotations.*;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import test.annotations.HtmlSpecialChars;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
 import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
@@ -40,14 +38,20 @@ import java.util.Map;
  */
 @Entity
 @Table(name = "photo")
-@FilterDef(name = "resolution_id", parameters = {
-        @ParamDef(name = "width", type = "integer"),
-        @ParamDef(name = "height", type = "integer")
+@FilterDefs({
+        @FilterDef(name = "resolution_id", parameters = {
+            @ParamDef(name = "width", type = "integer"),
+            @ParamDef(name = "height", type = "integer")
+        }),
+        @FilterDef(name = "page_id", parameters = {
+            @ParamDef(name = "pagesIds", type = "long")
+        })
 })
 
-@Filters(
-        @Filter(name = "resolution_id", condition = "width >= :width and height >= :height")
-)
+@Filters({
+        @Filter(name = "resolution_id", condition = "width >= :width and height >= :height"),
+        @Filter(name = "page_id", condition = "id_pages not in (:pagesIds)")
+})
 public class Wallpaper implements Serializable {
     private static final long serialVersionUID = -5679759939769651418L;
     @Id

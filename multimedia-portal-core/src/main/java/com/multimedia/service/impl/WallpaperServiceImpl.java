@@ -27,6 +27,7 @@ import common.utils.ImageUtils;
 import gallery.model.beans.Resolution;
 import gallery.model.beans.Wallpaper;
 import gallery.web.support.wallpaper.Utils;
+import org.hibernate.Filter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -587,11 +588,11 @@ public class WallpaperServiceImpl extends GenericServiceImpl<Wallpaper, Long> im
 
     }
 
-    private static final String[] RESOLUTION_NAME = {"width", "height"};
-
     @Override
     public void enableResolutionFilter(int width, int height) {
-        dao.enableFilter("resolution_id", RESOLUTION_NAME, new Object[]{width, height});
+        Filter filter = dao.enableFilter("resolution_id");
+        filter.setParameter("width", width);
+        filter.setParameter("height", height);
     }
 
     @Override

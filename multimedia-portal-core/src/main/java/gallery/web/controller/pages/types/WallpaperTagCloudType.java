@@ -17,6 +17,7 @@
 package gallery.web.controller.pages.types;
 
 import com.multimedia.service.IPagesPseudonymService;
+import com.multimedia.service.IPagesService;
 import com.multimedia.web.support.PaginatedListUtils;
 import common.beans.KeepParameters;
 import common.beans.PagerBean;
@@ -69,6 +70,8 @@ public class WallpaperTagCloudType extends AWallpaperType {
 
     @Autowired
     private IPagesPseudonymService optimizationService;
+    @Autowired
+    private IPagesService pagesService;
     /**
      * pagination config
      */
@@ -86,8 +89,11 @@ public class WallpaperTagCloudType extends AWallpaperType {
             request.setAttribute(config.getContentDataAttribute(), new TagCloudData(wallpaperService));
             url.setContent(searchUrl);
         } else {
+            List<Long> girlsChildrenId = pagesService.getAllActiveChildrenId(27L);
+            pagesService.enablePageIdFilter(girlsChildrenId);
+
             String[] props = {"active", "tags"};
-            String[][] relations = {new String[]{"="}, new String[]{"like", "like", "like", "like"}};
+            String[][] relations = {{"="}, {"like", "like", "like", "like"}};
             Object[][] values = {new Object[]{Boolean.TRUE}, tagCloud.getTagsLike()};
             int totalCount = ((Long)
                     wallpaperService.getSinglePropertyU("count(*)", props, relations, values, 0, null, null)).intValue();
@@ -110,6 +116,7 @@ public class WallpaperTagCloudType extends AWallpaperType {
             url.setPage_top(infoTopUrl);
             url.setPage_bottom(infoBottomUrl);
             url.setOptimization(optimizationUrl);
+            pagesService.disablePageIdFilter();
             if (totalCount == 0) {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }

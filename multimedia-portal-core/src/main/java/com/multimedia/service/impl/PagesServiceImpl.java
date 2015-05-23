@@ -24,6 +24,7 @@ import core.dao.IPagesDAO;
 import gallery.model.beans.Pages;
 import gallery.web.controller.pages.submodules.ASubmodule;
 import gallery.web.controller.pages.types.WallpaperGalleryType;
+import org.hibernate.Filter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -292,6 +293,17 @@ public class PagesServiceImpl extends GenericServiceImpl<Pages, Long> implements
     @Override
     public List<PagesRubrication> getPagesRubricationByIdPages(Long id_pages) {
         return pagesDAO.getPagesRubricationByIdPages(id_pages, RUBRICATION_TYPES, ORDER_BY, ORDER_HOW);
+    }
+
+    @Override
+    public void enablePageIdFilter(List<Long> pagesIds) {
+        Filter filter = dao.enableFilter("page_id");
+        filter.setParameterList("pagesIds", pagesIds);
+    }
+
+    @Override
+    public void disablePageIdFilter() {
+        dao.disableFilter("page_id");
     }
 
 }

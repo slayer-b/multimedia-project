@@ -23,6 +23,7 @@ import org.hibernate.Session;
 import org.hibernate.transform.AliasToBeanResultTransformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -953,19 +954,11 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements IGeneric
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public void enableFilter(String name, String[] paramNames, Object[] paramValues) {
-        Filter f = getCurrentSession().enableFilter(name);
-        if (paramNames == null || paramValues == null) {
-            return;
-        }
-        for (int i = 0; i < paramNames.length; i++) {
-            f = f.setParameter(paramNames[i], paramValues[i]);
-        }
+    public Filter enableFilter(String name) {
+        return getCurrentSession().enableFilter(name);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public void disableFilter(String name) {
         getCurrentSession().disableFilter(name);
     }

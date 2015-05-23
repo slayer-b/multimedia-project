@@ -125,4 +125,8 @@ public interface IPagesService extends IGenericService<Pages, Long> {
      * get active pages, that are children of given page and are of a type which displays in rubrication.
      */
 	List<PagesRubrication> getPagesRubricationByIdPages(Long id_pages);
+
+	void enablePageIdFilter(List<Long> pagesIds);
+
+	void disablePageIdFilter();
 }

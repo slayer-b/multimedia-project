@@ -16,6 +16,8 @@
 
 package common.dao;
 
+import org.hibernate.Filter;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -505,14 +507,7 @@ public interface IGenericDAO<T, ID extends Serializable> {
      */
     Object getRowNumber(Object[] values, String[] orderBy, String[] orderHow, String[] propertyName, Object[] propertyValue);
 
-    /**
-     * enables a filter defined in xml.
-     *
-     * @param name        filter name
-     * @param paramNames  names of params for the filter
-     * @param paramValues values of params
-     */
-    void enableFilter(String name, String[] paramNames, Object[] paramValues);
+    Filter enableFilter(String name);
 
     /**
      * disables a filter defined in xml.
