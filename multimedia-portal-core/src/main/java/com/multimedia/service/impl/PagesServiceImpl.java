@@ -192,8 +192,8 @@ public class PagesServiceImpl extends GenericServiceImpl<Pages, Long> implements
     }
 
     @Override
-    public List<Long> getAllActiveChildrenId(Long id) {
-        return pagesDAO.getAllActiveChildrenId(id, null, null);
+    public List<Long> getAllChildrenId(Long id, Boolean active) {
+        return pagesDAO.getAllChildrenId(id, null, null, active);
     }
 
     private static final String[] SUBMODULES_WHERE = {"active", "id_pages", "type"};

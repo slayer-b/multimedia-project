@@ -19,6 +19,7 @@ package core.dao;
 import com.multimedia.model.beans.PagesRubrication;
 import common.dao.IGenericDAO;
 import core.model.beans.Pages;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
@@ -64,17 +65,6 @@ public interface IPagesDAO<T extends Pages, ID extends Serializable> extends IGe
 	List<T> getPagesChildrenRecurciveOrderedWhere(String[] properties, String[] propPseudonyms, String[] propertyNames, Object[][] propertyValues,
 			String[] orderBy, String[] orderHow, Long first_id);
 
-	/**
-     * the result is sorted by sort and name columns works as follows
-     *1  selects all pages where id_pages=id
-     *2  adds first record to rezult (as r0)
-     *3  selects all pages where id_pages=r0.id
-     *   go 2
-	 * @param id id of page from where to start selecting
-	 * @return all children of page with id_pages
-	 */
-	List<Long> getAllActiveChildrenId(Long id, String[] orderBy, String[] orderHow);
-
     /**
      * checks if id is parent of newIdPages
      * @param id primary id of row to be changed
@@ -92,5 +82,14 @@ public interface IPagesDAO<T extends Pages, ID extends Serializable> extends IGe
 	 */
 	List<T> getAllParentsRecursive(Long id, String[] propertyNames, String[] propertyAliases);
 
-	List<PagesRubrication> getPagesRubricationByIdPages(Long id_pages, String[] types, String[] orderBy, String[] orderHow);
+    /**
+    * the result is sorted by sort and name columns works as follows
+    *1  selects all pages where id_pages=id
+    *2  adds first record to rezult (as r0)
+    *3  selects all pages where id_pages=r0.id
+    *   go 2
+    */
+    List<Long> getAllChildrenId(Long id, String[] orderBy, String[] orderHow, Boolean active);
+
+    List<PagesRubrication> getPagesRubricationByIdPages(Long id_pages, String[] types, String[] orderBy, String[] orderHow);
 }

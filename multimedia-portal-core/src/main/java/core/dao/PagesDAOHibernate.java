@@ -245,7 +245,7 @@ public class PagesDAOHibernate<T extends Pages, ID extends Serializable> extends
 
     @Override
     @Transactional(readOnly = true)
-    public List<Long> getAllActiveChildrenId(Long id, String[] orderBy, String[] orderHow) {
+    public List<Long> getAllChildrenId(Long id, String[] orderBy, String[] orderHow, Boolean active) {
         List<Long> rez = new ArrayList<Long>();
         //forming HQL-----------------------------------------------------------
         StringBuilder baseHQL = new StringBuilder("SELECT ");
@@ -258,7 +258,7 @@ public class PagesDAOHibernate<T extends Pages, ID extends Serializable> extends
         if (id == null) {
             //selecting base entities
             StringBuilder hql = new StringBuilder(baseHQL);
-            hql.append(" WHERE id_pages is null AND active = 1");
+            hql.append(" WHERE id_pages is null AND active = :active");
             HQLPartGenerator.getOrderBy(orderBy, orderHow, hql);
             temp = sess.createQuery(hql.toString()).list();
         } else {
@@ -267,14 +267,16 @@ public class PagesDAOHibernate<T extends Pages, ID extends Serializable> extends
         }
         //----------------------------------------------------------------------
         //completing hql forming
-        baseHQL.append(" WHERE id_pages = :id_pages AND active = 1");
+        baseHQL.append(" WHERE id_pages = :id_pages AND active = :active");
         HQLPartGenerator.getOrderBy(orderBy, orderHow, baseHQL);
 
+        Boolean activeVal = active == null ? Boolean.TRUE : active;
         while (!temp.isEmpty()) {
             //getting first element
             Long currRow = temp.remove(0);
 
-            List<Long> children = sess.createQuery(baseHQL.toString()).setLong("id_pages", currRow).list();
+            List<Long> children = sess.createQuery(baseHQL.toString()).setLong("id_pages", currRow)
+                    .setBoolean("active", activeVal).list();
 
             temp.addAll(0, children);
 

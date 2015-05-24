@@ -27,8 +27,6 @@ import gallery.model.beans.Wallpaper;
 import gallery.model.command.TagCloudData;
 import gallery.model.command.TagCloudView;
 import gallery.web.support.pages.Utils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.validation.BindingResult;
@@ -89,7 +87,7 @@ public class WallpaperTagCloudType extends AWallpaperType {
             request.setAttribute(config.getContentDataAttribute(), new TagCloudData(wallpaperService));
             url.setContent(searchUrl);
         } else {
-            List<Long> girlsChildrenId = pagesService.getAllActiveChildrenId(27L);
+            List<Long> girlsChildrenId = pagesService.getAllChildrenId(27L, null);
             pagesService.enablePageIdFilter(girlsChildrenId);
 
             String[] props = {"active", "tags"};

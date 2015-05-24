@@ -97,7 +97,7 @@ public interface IPagesService extends IGenericService<Pages, Long> {
 	 * @param id id of page from where to start selecting
 	 * @return all children of page with id_pages includes id of start page
 	 */
-	List<Long> getAllActiveChildrenId(Long id);
+	List<Long> getAllChildrenId(Long id, Boolean active);
 
 	/**
      * submodules are pages with specified types
