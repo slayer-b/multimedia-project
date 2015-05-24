@@ -106,7 +106,7 @@ public class RubricImageCachingService implements IRubricImageService {
      */
     protected boolean generateImages(Pages p, File dstDir) {
         boolean succeed = true;
-        List<Long> ids = pagesService.getAllChildrenId(p.getId());
+        List<Long> ids = pagesService.getAllChildrenId(p.getId(), Boolean.TRUE);
         List<Wallpaper> wallpapers = wallpaperService.getMainImages(ids, imageQuantity);
         File srcDir = new File(wallpaperService.getStorePath(), Utils.FULL_DIMENSION_NAME);
 
@@ -133,7 +133,7 @@ public class RubricImageCachingService implements IRubricImageService {
 
     /**
      * generates image_quantity images for current page
-     * image is made by drawing 4 images on one same images
+     * image is made by drawing 4 images on one same image
      * the resulting images are in image_width * image_height resolution
      *
      * @param p      page to take images for
@@ -142,7 +142,7 @@ public class RubricImageCachingService implements IRubricImageService {
      */
     protected boolean generateImages4(Pages p, File dstDir) {
         boolean succeed = true;
-        List<Long> ids = pagesService.getAllChildrenId(p.getId());
+        List<Long> ids = pagesService.getAllChildrenId(p.getId(), Boolean.TRUE);
         List<Wallpaper> wallpapers = wallpaperService.getMainImages(ids, 4);
 
         File srcDir = new File(wallpaperService.getStorePath(), Utils.FULL_DIMENSION_NAME);
