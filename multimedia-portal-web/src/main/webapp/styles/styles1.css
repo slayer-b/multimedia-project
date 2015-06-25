@@ -412,6 +412,7 @@ div.center {
     margin-left: 205px;
     margin-right: 215px;
     position: relative;
+    min-height: 825px;
 }
 
 div.content {
@@ -728,6 +729,7 @@ div.r-l-0 {
     div.center {
         margin-left: 0;
         margin-right: 0;
+        min-height: 0;
     }
 }
 
