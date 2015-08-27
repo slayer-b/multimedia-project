@@ -69,3 +69,23 @@ function makeHomePage(objSrc)
         navigator.preference("browser.startup.homepage", homepage);
     }
 }
+
+function adjustHeight() {
+    var $center = $(".center");
+    var max = $center.height();
+    var left = $(".left").height();
+    if (left > max) {
+        max = left;
+    }
+    var right = $(".right").height();
+    if (right > max) {
+        max = right;
+    }
+    $center.height(max + 90);
+}
+$("img").load(function() {
+   adjustHeight();
+});
+$(document).ready(function() {
+    adjustHeight();
+});

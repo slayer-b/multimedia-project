@@ -33,6 +33,7 @@ function show_hide(id) {
                 $("#id_"+id).slideDown(500);
                 switcher.src = minus_img;
                 switcher.alt = '-';
+                adjustHeight();
             }
         });
 	} else {
@@ -45,5 +46,6 @@ function show_hide(id) {
 			switcher.src = plus_img;
 			switcher.alt = '+';
 		}
+        adjustHeight()
 	}
 }
