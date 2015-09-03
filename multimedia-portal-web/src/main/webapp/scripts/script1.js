@@ -71,21 +71,20 @@ function makeHomePage(objSrc)
 }
 
 function adjustHeight() {
-    var $center = $(".center");
-    var max = $center.height();
-    var left = $(".left").height();
-    if (left > max) {
-        max = left;
-    }
+    var max = $(".left").height();
     var right = $(".right").height();
     if (right > max) {
         max = right;
     }
-    $center.height(max + 90);
+    var h = 0;
+    var $center = $(".center");
+    $center.children().each(function() {
+        h += $(this).height();
+    });
+    if (h > max) {
+        max = h;
+    }
+    $center.height(max);
 }
-$("img").load(function() {
-   adjustHeight();
-});
-$(document).ready(function() {
-    adjustHeight();
-});
+
+setInterval(adjustHeight, 500);
