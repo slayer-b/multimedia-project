@@ -71,15 +71,15 @@ function makeHomePage(objSrc)
 }
 
 function adjustHeight() {
-    var max = $(".left").height();
-    var right = $(".right").height();
+    var max = $(".left").outerHeight(true);
+    var right = $(".right").outerHeight(true);
     if (right > max) {
         max = right;
     }
     var h = 0;
     var $center = $(".center");
     $center.children().each(function() {
-        h += $(this).height();
+        h += $(this).outerHeight(true);
     });
     if (h > max) {
         max = h;
