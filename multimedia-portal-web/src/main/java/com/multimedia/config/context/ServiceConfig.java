@@ -117,7 +117,7 @@ public class ServiceConfig {
                 ctx.getResource(env.resolvePlaceholders("${wallpaper.resized.dir}")),
                 ctx.getResource(env.resolvePlaceholders("${wallpaper.backup.dir}")),
                 ctx.getResource(env.resolvePlaceholders("${wallpaper.upload.dir}")),
-                new HashSet<String>(Arrays.asList("Другой", "Другие", "Другое", "Эротика")),
+                new HashSet<String>(Arrays.asList("Другой", "Другие", "Другое", "Эротика", "Девушки")),
                 dimensions
         );
     }
